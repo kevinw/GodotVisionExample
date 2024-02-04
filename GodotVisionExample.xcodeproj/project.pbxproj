@@ -12,7 +12,7 @@
 		DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EAB92B3C75D600594A05 /* Assets.xcassets */; };
 		DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */; };
 		DE5677472B702126002BABB4 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE5677462B702126002BABB4 /* GodotVision */; };
-		DE8897452B703DBF00AAF4BB /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE8897442B703DBF00AAF4BB /* GodotVision */; };
+		DE8897482B704C9700AAF4BB /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE8897472B704C9700AAF4BB /* GodotVision */; };
 		DEF363ED2B57F443005E175D /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = DEF363EC2B57F443005E175D /* Godot_Project */; };
 		DEF363F02B57F5CD005E175D /* SwiftGodotKit in Frameworks */ = {isa = PBXBuildFile; productRef = DEF363EF2B57F5CD005E175D /* SwiftGodotKit */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 			files = (
 				DE5677472B702126002BABB4 /* GodotVision in Frameworks */,
 				DEF363F02B57F5CD005E175D /* SwiftGodotKit in Frameworks */,
-				DE8897452B703DBF00AAF4BB /* GodotVision in Frameworks */,
+				DE8897482B704C9700AAF4BB /* GodotVision in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			packageProductDependencies = (
 				DEF363EF2B57F5CD005E175D /* SwiftGodotKit */,
 				DE5677462B702126002BABB4 /* GodotVision */,
-				DE8897442B703DBF00AAF4BB /* GodotVision */,
+				DE8897472B704C9700AAF4BB /* GodotVision */,
 			);
 			productName = GodotVisionExample;
 			productReference = DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */;
@@ -130,7 +130,7 @@
 			);
 			mainGroup = DE54EAA32B3C75D500594A05;
 			packageReferences = (
-				DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */,
+				DE8897462B704C9700AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */,
 			);
 			productRefGroup = DE54EAAD2B3C75D500594A05 /* Products */;
 			projectDirPath = "";
@@ -397,9 +397,9 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */ = {
+		DE8897462B704C9700AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/multijam/GodotVision.git";
+			repositoryURL = "https://github.com/kevinw/GodotVision";
 			requirement = {
 				kind = revision;
 				revision = 8d43aa5d872bc3cca88edc63bf7c3473089b9937;
@@ -417,9 +417,9 @@
 			package = DE5677452B702126002BABB4 /* XCLocalSwiftPackageReference "../GodotVision" */;
 			productName = GodotVision;
 		};
-		DE8897442B703DBF00AAF4BB /* GodotVision */ = {
+		DE8897472B704C9700AAF4BB /* GodotVision */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */;
+			package = DE8897462B704C9700AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */;
 			productName = GodotVision;
 		};
 		DEF363EF2B57F5CD005E175D /* SwiftGodotKit */ = {
