@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */; };
+		DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB52B3C75D500594A05 /* ContentView.swift */; };
+		DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EAB92B3C75D600594A05 /* Assets.xcassets */; };
+		DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */; };
+		DE5677472B702126002BABB4 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE5677462B702126002BABB4 /* GodotVision */; };
+		DE8897452B703DBF00AAF4BB /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE8897442B703DBF00AAF4BB /* GodotVision */; };
+		DEF363ED2B57F443005E175D /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = DEF363EC2B57F443005E175D /* Godot_Project */; };
+		DEF363F02B57F5CD005E175D /* SwiftGodotKit in Frameworks */ = {isa = PBXBuildFile; productRef = DEF363EF2B57F5CD005E175D /* SwiftGodotKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodotVisionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExample.swift; sourceTree = "<group>"; };
+		DE54EAB52B3C75D500594A05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE54EAB92B3C75D600594A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE54EABE2B3C75D600594A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF363EC2B57F443005E175D /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE54EAA92B3C75D500594A05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5677472B702126002BABB4 /* GodotVision in Frameworks */,
+				DEF363F02B57F5CD005E175D /* SwiftGodotKit in Frameworks */,
+				DE8897452B703DBF00AAF4BB /* GodotVision in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE54EAA32B3C75D500594A05 = {
+			isa = PBXGroup;
+			children = (
+				DEF363EC2B57F443005E175D /* Godot_Project */,
+				DE54EAAE2B3C75D500594A05 /* GodotVisionExample */,
+				DE54EAAD2B3C75D500594A05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE54EAAD2B3C75D500594A05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE54EAAE2B3C75D500594A05 /* GodotVisionExample */ = {
+			isa = PBXGroup;
+			children = (
+				DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */,
+				DE54EAB52B3C75D500594A05 /* ContentView.swift */,
+				DE54EAB92B3C75D600594A05 /* Assets.xcassets */,
+				DE54EABE2B3C75D600594A05 /* Info.plist */,
+				DE54EABB2B3C75D600594A05 /* Preview Content */,
+			);
+			path = GodotVisionExample;
+			sourceTree = "<group>";
+		};
+		DE54EABB2B3C75D600594A05 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE54EAAB2B3C75D500594A05 /* GodotVisionExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE54EAC12B3C75D600594A05 /* Build configuration list for PBXNativeTarget "GodotVisionExample" */;
+			buildPhases = (
+				DE54EAA82B3C75D500594A05 /* Sources */,
+				DE54EAA92B3C75D500594A05 /* Frameworks */,
+				DE54EAAA2B3C75D500594A05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE5677492B702579002BABB4 /* PBXTargetDependency */,
+			);
+			name = GodotVisionExample;
+			packageProductDependencies = (
+				DEF363EF2B57F5CD005E175D /* SwiftGodotKit */,
+				DE5677462B702126002BABB4 /* GodotVision */,
+				DE8897442B703DBF00AAF4BB /* GodotVision */,
+			);
+			productName = GodotVisionExample;
+			productReference = DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE54EAA42B3C75D500594A05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					DE54EAAB2B3C75D500594A05 = {
+						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+					};
+				};
+			};
+			buildConfigurationList = DE54EAA72B3C75D500594A05 /* Build configuration list for PBXProject "GodotVisionExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE54EAA32B3C75D500594A05;
+			packageReferences = (
+				DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */,
+			);
+			productRefGroup = DE54EAAD2B3C75D500594A05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE54EAAB2B3C75D500594A05 /* GodotVisionExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE54EAAA2B3C75D500594A05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF363ED2B57F443005E175D /* Godot_Project in Resources */,
+				DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */,
+				DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE54EAA82B3C75D500594A05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */,
+				DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE5677492B702579002BABB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DE5677482B702579002BABB4 /* GodotVision */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DE54EABF2B3C75D600594A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		DE54EAC02B3C75D600594A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		DE54EAC22B3C75D600594A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"GodotVisionExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LJP7QK7UE;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					_DEBUG,
+					JPH_PROFILE_ENABLED,
+					JPH_DEBUG_RENDERER,
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GodotVisionExample;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GodotVision;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		DE54EAC32B3C75D600594A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"GodotVisionExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LJP7QK7UE;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GodotVisionExample;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GodotVision;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE54EAA72B3C75D500594A05 /* Build configuration list for PBXProject "GodotVisionExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE54EABF2B3C75D600594A05 /* Debug */,
+				DE54EAC02B3C75D600594A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE54EAC12B3C75D600594A05 /* Build configuration list for PBXNativeTarget "GodotVisionExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE54EAC22B3C75D600594A05 /* Debug */,
+				DE54EAC32B3C75D600594A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		DE5677452B702126002BABB4 /* XCLocalSwiftPackageReference "../GodotVision" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../GodotVision;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/multijam/GodotVision.git";
+			requirement = {
+				kind = revision;
+				revision = 377cf1789445b5fe2d95fadc952ceab89d0718cf;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE5677462B702126002BABB4 /* GodotVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GodotVision;
+		};
+		DE5677482B702579002BABB4 /* GodotVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE5677452B702126002BABB4 /* XCLocalSwiftPackageReference "../GodotVision" */;
+			productName = GodotVision;
+		};
+		DE8897442B703DBF00AAF4BB /* GodotVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8897432B703DBF00AAF4BB /* XCRemoteSwiftPackageReference "GodotVision" */;
+			productName = GodotVision;
+		};
+		DEF363EF2B57F5CD005E175D /* SwiftGodotKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftGodotKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DE54EAA42B3C75D500594A05 /* Project object */;
+}

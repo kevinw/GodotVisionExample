@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "cow_icon_forground.png",
+      "idiom" : "vision",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
