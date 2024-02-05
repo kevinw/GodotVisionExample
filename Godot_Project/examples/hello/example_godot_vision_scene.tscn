@@ -1,18 +1,18 @@
 [gd_scene load_steps=16 format=3 uid="uid://vts2xl0t0xub"]
 
-[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_7vv58"]
-[ext_resource type="PackedScene" uid="uid://bb6s0wxfewce6" path="res://prefabs/tower_enemy.tscn" id="2_clt3x"]
-[ext_resource type="Script" path="res://scripts/Rotater.gd" id="2_gmdxs"]
-[ext_resource type="Script" path="res://scenes/play_sound_button.gd" id="3_o045x"]
-[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://textures/checker.jpg" id="4_8ah7k"]
-[ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://sound/moo.mp3" id="4_s46bw"]
-[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="6_hy6hl"]
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
+[ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
+[ext_resource type="PackedScene" uid="uid://bb6s0wxfewce6" path="res://examples/hello/prefabs/tower_enemy.tscn" id="3_ywgnt"]
+[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
+[ext_resource type="Script" path="res://examples/hello/scripts/play_sound_button.gd" id="5_lq6td"]
+[ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
+[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="7_w56wj"]
 
 [sub_resource type="TextMesh" id="TextMesh_14eta"]
 text = "Hello from Godot"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbryu"]
-albedo_texture = ExtResource("4_8ah7k")
+albedo_texture = ExtResource("4_v0jkp")
 
 [sub_resource type="BoxMesh" id="BoxMesh_u4h1h"]
 material = SubResource("StandardMaterial3D_dbryu")
@@ -36,16 +36,16 @@ Sound"
 [node name="Example GodotVision Scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
 
-[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_7vv58")]
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_3lu4e")]
 
 [node name="Text Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(10.009, 0, 0, 0, 10.009, 0, 0, 0, 10.009, 0, 0, 0)
 mesh = SubResource("TextMesh_14eta")
-script = ExtResource("2_gmdxs")
+script = ExtResource("2_32yj7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="character" parent="." instance=ExtResource("2_clt3x")]
+[node name="character" parent="." instance=ExtResource("3_ywgnt")]
 transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 1.30854, 2.08165e-12)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -60,7 +60,7 @@ shape = SubResource("BoxShape3D_ttl84")
 [node name="Play Sound Button" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20155, -1.90392, -0.700861)
 collision_mask = 0
-script = ExtResource("3_o045x")
+script = ExtResource("5_lq6td")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Play Sound Button"]
 shape = SubResource("BoxShape3D_5oa15")
@@ -74,7 +74,7 @@ mesh = SubResource("TextMesh_l018j")
 
 [node name="RKAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Play Sound Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-stream = ExtResource("4_s46bw")
-script = ExtResource("6_hy6hl")
+stream = ExtResource("6_3x8lp")
+script = ExtResource("7_w56wj")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]

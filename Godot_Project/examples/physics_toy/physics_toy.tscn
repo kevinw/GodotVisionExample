@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://7sh7v8nu44lc"]
+
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_lv7bk"]
+[ext_resource type="PackedScene" uid="uid://43rktd62aem5" path="res://examples/physics_toy/prefabs/emitter.tscn" id="2_8ripl"]
+[ext_resource type="PackedScene" uid="uid://bxbkpri64rh7f" path="res://examples/physics_toy/prefabs/diagonal_toggle_board.tscn" id="3_c6xjb"]
+[ext_resource type="PackedScene" uid="uid://h2hleasl7813" path="res://examples/physics_toy/prefabs/spring.tscn" id="4_ywf1x"]
+[ext_resource type="PackedScene" uid="uid://cthxmr6qmrukk" path="res://examples/physics_toy/prefabs/water_wheel.tscn" id="5_m8oh6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqju8"]
+size = Vector3(2, 1.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjt1l"]
+transparency = 1
+albedo_color = Color(0, 0, 1, 0.478431)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4iivh"]
+material = SubResource("StandardMaterial3D_sjt1l")
+size = Vector3(2, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mc81m"]
+size = Vector3(1.5, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7x7ch"]
+size = Vector3(1.5, 0.3, 1)
+
+[node name="PhysicsToy" type="Node3D"]
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_lv7bk")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.995205, 0.0901146, 0.0380385, -0.0403967, 0.0244906, 0.998884, 0.0890824, -0.99563, 0.0280134, 0, 0, 0)
+shadow_enabled = true
+
+[node name="toy" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53417, 0, 0)
+
+[node name="Emitter" parent="toy" instance=ExtResource("2_8ripl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00344056, 1.70462, 0.00101805)
+
+[node name="Emitter2" parent="toy" instance=ExtResource("2_8ripl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.03546, 2.62865, 0.00101805)
+
+[node name="DiagonalToggleBoard" parent="toy" instance=ExtResource("3_c6xjb")]
+
+[node name="DiagonalToggleBoard2" parent="toy" instance=ExtResource("3_c6xjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 2.08165e-12)
+
+[node name="DiagonalToggleBoard3" parent="toy" instance=ExtResource("3_c6xjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 2.08165e-12)
+
+[node name="Spring" parent="toy" instance=ExtResource("4_ywf1x")]
+
+[node name="Spring2" parent="toy" instance=ExtResource("4_ywf1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00444627, -2.47231, 5.20412e-12)
+
+[node name="ZeroGravZone" type="Node3D" parent="toy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50665, -0.779248, 0)
+
+[node name="Area3D" type="Area3D" parent="toy/ZeroGravZone"]
+gravity_space_override = 3
+gravity = 6.66134e-16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toy/ZeroGravZone/Area3D"]
+shape = SubResource("BoxShape3D_jqju8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="toy/ZeroGravZone/Area3D"]
+mesh = SubResource("BoxMesh_4iivh")
+
+[node name="ZeroGravZone2" type="Node3D" parent="toy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12493, 0.362967, -0.0786657)
+
+[node name="Area3D" type="Area3D" parent="toy/ZeroGravZone2"]
+gravity_space_override = 3
+gravity = 6.66134e-16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toy/ZeroGravZone2/Area3D"]
+shape = SubResource("BoxShape3D_jqju8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="toy/ZeroGravZone2/Area3D"]
+mesh = SubResource("BoxMesh_4iivh")
+
+[node name="Platform2" type="StaticBody3D" parent="toy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45672, -0.133251, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toy/Platform2"]
+shape = SubResource("BoxShape3D_mc81m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="toy/Platform2"]
+mesh = SubResource("BoxMesh_7x7ch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="toy/Platform2"]
+mesh = SubResource("BoxMesh_7x7ch")
+
+[node name="Platform" type="StaticBody3D" parent="toy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88214, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toy/Platform"]
+shape = SubResource("BoxShape3D_mc81m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="toy/Platform"]
+mesh = SubResource("BoxMesh_7x7ch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="toy/Platform"]
+mesh = SubResource("BoxMesh_7x7ch")
+
+[node name="WaterWheel" parent="toy" instance=ExtResource("5_m8oh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5208, -0.400309, 2.08165e-12)
+
+[node name="WaterWheel2" parent="toy" instance=ExtResource("5_m8oh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52874, -1.97906, 2.08165e-12)

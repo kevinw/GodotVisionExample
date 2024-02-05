@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxbkpri64rh7f"]
+
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/diagonal_toggle_board.gd" id="1_jq6sw"]
+[ext_resource type="AudioStream" uid="uid://cyi7jwxbakwsc" path="res://examples/physics_toy/sounds/71774__lg__switch-22.mp3" id="2_gq8rv"]
+[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="3_ypvxh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4leg"]
+size = Vector3(1, 0.03, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_go6lu"]
+size = Vector3(1, 0.04, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g86my"]
+radius = 0.02
+height = 1.1
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csd04"]
+albedo_color = Color(1, 0.0784314, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bpiv6"]
+top_radius = 0.04
+bottom_radius = 0.06
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lioj3"]
+albedo_color = Color(0.470588, 0.192157, 0.560784, 1)
+
+[node name="DiagonalToggleBoard" type="Node3D"]
+script = ExtResource("1_jq6sw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 3.48787e-16, 0.707107, 0.707107, -3.48787e-16, 1.60554e-24, 4.93259e-16, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_i4leg")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_go6lu")
+
+[node name="Axis" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_g86my")
+surface_material_override/0 = SubResource("StandardMaterial3D_csd04")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.08165e-12, 2.08165e-12, -0.520123)
+mesh = SubResource("CylinderMesh_bpiv6")
+surface_material_override/0 = SubResource("StandardMaterial3D_lioj3")
+
+[node name="sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_gq8rv")
+script = ExtResource("3_ypvxh")
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

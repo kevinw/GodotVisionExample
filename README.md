@@ -14,3 +14,6 @@ An example Xcode project which has [GodotVision](https://github.com/kevinw/Godot
 - Hit play. You'll get an error that you need to "Trust and Enable" the macros in `SwiftGodot` and `SwiftGodotKit`. You may need to click the build error in the issues tab to enable them.
 - Hit play again. The first build will be slow, since we need to compile SwiftGodot, which includes Swift bindings for all of Godot's gdextension API. Subsequent builds will be faster!
 
+## To Hack on GodotVision
+
+Clone the [GodotVision](https://github.com/kevinw/GodotVision) repository next to your project. Drag the GodotVision folder onto your Xcode project's navigator/file tree on the left. This establishes a local package dependency and changes to GodotVision you make will have immediate effect in your project.

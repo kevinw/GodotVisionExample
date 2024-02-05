@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GodotVisionExample"
-run/main_scene="res://scenes/example_godot_vision_scene.tscn"
+run/main_scene="res://examples/hello/example_godot_vision_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 
 [display]

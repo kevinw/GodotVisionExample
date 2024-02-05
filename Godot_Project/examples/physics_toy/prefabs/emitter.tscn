@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://43rktd62aem5"]
+
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/emitter.gd" id="1_uynco"]
+[ext_resource type="PackedScene" uid="uid://ca4r4hmmhcldf" path="res://examples/physics_toy/prefabs/ball.tscn" id="2_pn07b"]
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/tween_effect.gd" id="3_31efd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1k1ua"]
+top_radius = 0.71
+bottom_radius = 0.71
+height = 20.0
+radial_segments = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw64p"]
+albedo_color = Color(0.796078, 0.796078, 0.796078, 1)
+metallic = 0.61
+metallic_specular = 0.91
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wdcd0"]
+top_radius = 0.848
+bottom_radius = 1.297
+height = 0.4
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yjm4t"]
+top_radius = 0.0
+bottom_radius = 1.919
+height = 1.844
+radial_segments = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opcwc"]
+albedo_color = Color(0.976471, 0.141176, 0.282353, 1)
+
+[node name="Emitter" type="Node3D"]
+script = ExtResource("1_uynco")
+emits = ExtResource("2_pn07b")
+
+[node name="Meshes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18389, 0)
+
+[node name="Pipe" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9623, 0)
+mesh = SubResource("CylinderMesh_1k1ua")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_nw64p")
+
+[node name="Ridges" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63721, 0)
+mesh = SubResource("CylinderMesh_wdcd0")
+skeleton = NodePath("../..")
+
+[node name="Ridges2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.38902, 0)
+mesh = SubResource("CylinderMesh_wdcd0")
+skeleton = NodePath("../..")
+
+[node name="Ridges3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12106, 0)
+mesh = SubResource("CylinderMesh_wdcd0")
+skeleton = NodePath("../..")
+
+[node name="BottomFunnel" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79358, 0)
+mesh = SubResource("CylinderMesh_yjm4t")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_opcwc")
+script = ExtResource("3_31efd")
+amount = 1.25
+duration = 0.15
+
+[connection signal="emitted_node" from="." to="Meshes/BottomFunnel" method="trigger"]

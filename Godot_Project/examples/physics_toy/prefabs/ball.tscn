@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca4r4hmmhcldf"]
+
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/ball.gd" id="1_f31ku"]
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/out_of_bounds.gd" id="2_t8akg"]
+[ext_resource type="Script" path="res://examples/physics_toy/scripts/PhysicsCollisionSound.gd" id="3_u2rwa"]
+[ext_resource type="AudioStream" uid="uid://d06yj67igh28l" path="res://examples/physics_toy/sounds/332661__reitanna__big-thud.mp3" id="4_amyrq"]
+[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="5_og5e4"]
+[ext_resource type="AudioStream" uid="uid://dygabhvbnucxw" path="res://examples/physics_toy/sounds/683101__florianreichelt__quick-woosh.mp3" id="6_btgwo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_h7yn1"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbtxi"]
+albedo_color = Color(1, 0.207843, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lxegb"]
+radius = 0.2
+
+[node name="BallRigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("whoosh_sound")]
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_f31ku")
+whoosh_sound = NodePath("whoosh sound")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_h7yn1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dbtxi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_lxegb")
+
+[node name="OutOfBoundsChecker" type="Node" parent="."]
+script = ExtResource("2_t8akg")
+
+[node name="PhysicsCollisionSound" type="Node" parent="."]
+script = ExtResource("3_u2rwa")
+
+[node name="sound" type="AudioStreamPlayer3D" parent="PhysicsCollisionSound"]
+stream = ExtResource("4_amyrq")
+volume_db = -11.1
+script = ExtResource("5_og5e4")
+
+[node name="whoosh sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_btgwo")
+script = ExtResource("5_og5e4")
+
+[connection signal="body_entered" from="." to="PhysicsCollisionSound" method="_on_ball_rigid_body_3d_body_entered"]
+[connection signal="did_acccel" from="." to="whoosh sound" method="play_rk"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

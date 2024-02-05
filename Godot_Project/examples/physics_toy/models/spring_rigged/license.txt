@@ -1,0 +1,8 @@
+Model Information:
+* title:	Spring (Rigged)
+* source:	https://sketchfab.com/3d-models/spring-rigged-939e76216d604b84ba8e6f97825795cb
+* author:	unrealengine432 (https://sketchfab.com/unrealengine432)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
