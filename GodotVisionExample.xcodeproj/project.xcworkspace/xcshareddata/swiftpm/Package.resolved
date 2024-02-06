@@ -3,9 +3,9 @@
     {
       "identity" : "godotvision",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kevinw/GodotVision",
+      "location" : "https://github.com/kevinw/GodotVision.git",
       "state" : {
-        "revision" : "8d43aa5d872bc3cca88edc63bf7c3473089b9937"
+        "revision" : "c628c6245d68afcc754da0b46d0585b2eebe79bd"
       }
     },
     {
