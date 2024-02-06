@@ -16,4 +16,7 @@ An example Xcode project which has [GodotVision](https://github.com/kevinw/Godot
 
 ## To Hack on GodotVision
 
-Clone the [GodotVision](https://github.com/kevinw/GodotVision) repository next to your project. Drag the GodotVision folder onto your Xcode project's navigator/file tree on the left. This establishes a local package dependency and changes to GodotVision you make will have immediate effect in your project.
+GodotVision is referenced as a Package Dependency in this example repo. If you want to modify GodotVision:
+
+* Clone the [GodotVision](https://github.com/kevinw/GodotVision) repository next to your project.
+* Drag the GodotVision folder onto your Xcode project's navigator/file tree on the left. This establishes a local package dependency and changes to GodotVision you make will have immediate effect in your project.
