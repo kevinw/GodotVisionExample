@@ -1,0 +1,11 @@
+Model Information:
+* title:	Godot Logo
+* source:	https://sketchfab.com/3d-models/godot-logo-239ac8e0cf364b7c889ce92224d38f78
+* author:	Alex2911 (https://sketchfab.com/alex2911)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Godot Logo" (https://sketchfab.com/3d-models/godot-logo-239ac8e0cf364b7c889ce92224d38f78) by Alex2911 (https://sketchfab.com/alex2911) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
