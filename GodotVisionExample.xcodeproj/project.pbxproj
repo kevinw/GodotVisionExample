@@ -395,7 +395,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kevinw/GodotVision.git";
 			requirement = {
-				branch = c628c6245d68afcc754da0b46d0585b2eebe79bd;
+				branch = 67ae4bb92bb8d04ec3082019e2174944d0c7c8e6;
 				kind = branch;
 			};
 		};
