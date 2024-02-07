@@ -18,6 +18,7 @@ text = "Hello from Godot"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbryu"]
 albedo_texture = ExtResource("4_v0jkp")
+uv1_scale = Vector3(3, 3, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u4h1h"]
 material = SubResource("StandardMaterial3D_dbryu")
