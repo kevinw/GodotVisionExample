@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk45ipd2q36d4"]
+
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_g8bpa"]
+[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="2_2tb3w"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2wcns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nf6y"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission_texture = ExtResource("2_2tb3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pudax"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="Materials" type="Node2D"]
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_g8bpa")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_2wcns")
+surface_material_override/0 = SubResource("StandardMaterial3D_8nf6y")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37252, 0, 0)
+mesh = SubResource("SphereMesh_2wcns")
+surface_material_override/0 = SubResource("StandardMaterial3D_pudax")

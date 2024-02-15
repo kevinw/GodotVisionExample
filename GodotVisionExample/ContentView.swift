@@ -33,15 +33,21 @@ struct ContentView: View {
                         }
                         
                         Button {
-                            coordinator.changeSceneToFile(atResourcePath: "res://examples/physics_toy/physics_toy.tscn")
+                            coordinator.changeSceneToFile(atResourcePath: "res://examples/hello/example_godot_vision_scene.tscn")
                         } label: {
-                            Text("Physics Toy")
+                            Text("Hello")
                         }
                         
                         Button {
-                            coordinator.changeSceneToFile(atResourcePath: "res://examples/hello/example_godot_vision_scene.tscn")
+                            coordinator.changeSceneToFile(atResourcePath: "res://examples/physics_toy/physics_toy.tscn")
                         } label: {
-                            Text("Hello Scene")
+                            Text("Physics")
+                        }
+                        
+                        Button {
+                            coordinator.changeSceneToFile(atResourcePath: "res://examples/materials/materials.tscn")
+                        } label: {
+                            Text("Materials")
                         }
                     }.padding(36).frame(width: 700).glassBackgroundEffect()
                 }
