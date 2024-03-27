@@ -1,0 +1,8 @@
+Model Information:
+* title:	Low poly Alpaca
+* source:	https://sketchfab.com/3d-models/low-poly-alpaca-6fff35b671464bea80baae4f53111aae
+* author:	kenchoo (https://sketchfab.com/kenchoo)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

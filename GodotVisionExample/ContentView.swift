@@ -54,6 +54,12 @@ struct ContentView: View {
                         } label: {
                             Text("Materials")
                         }
+                        
+                        Button {
+                            coordinator.changeSceneToFile(atResourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
+                        } label: {
+                            Text("Rigged Models")
+                        }
                     }.padding(36).frame(width: 700).glassBackgroundEffect()
                 }
             }

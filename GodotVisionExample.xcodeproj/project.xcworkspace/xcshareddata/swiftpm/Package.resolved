@@ -1,11 +1,12 @@
 {
+  "originHash" : "fb7a72ac1664fff8cbdb406661f97217a01f64a6ae7341d91ed5b11def041c6c",
   "pins" : [
     {
       "identity" : "godotvision",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kevinw/GodotVision.git",
       "state" : {
-        "revision" : "59e4d8c1387190dd87b7e89ab2237e27c4fec923"
+        "revision" : "b880db100a9f707b5dda9eb62368a61720043e27"
       }
     },
     {
@@ -34,5 +35,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

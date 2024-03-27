@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://biunegs8tkvn0"]
+[gd_scene load_steps=6 format=3 uid="uid://biunegs8tkvn0"]
 
 [ext_resource type="Script" path="res://addons/godot_vision/vision_volume_camera.gd" id="1_bqg8h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2vsb"]
 size = Vector3(20, 10, 15)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_6ppar"]
+sun_disk_scale = 21.2
+ground_color = Color(0.513726, 0.411765, 0.286275, 1)
+energy_multiplier = 5.5
+
+[sub_resource type="Sky" id="Sky_0pgy2"]
+sky_material = SubResource("PhysicalSkyMaterial_6ppar")
+
+[sub_resource type="Environment" id="Environment_x2d02"]
+background_mode = 2
+sky = SubResource("Sky_0pgy2")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="VisionVolumeCamera" type="Area3D"]
 input_ray_pickable = false
@@ -16,3 +30,4 @@ shape = SubResource("BoxShape3D_t2vsb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.941852, 0.336027, 0, -0.336027, 0.941852, 0, 2.24739, 16.0572)
+environment = SubResource("Environment_x2d02")
