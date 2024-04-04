@@ -396,7 +396,7 @@
 			repositoryURL = "https://github.com/kevinw/GodotVision.git";
 			requirement = {
 				kind = revision;
-				revision = cbd6182b378932ab3acd0ac9398c7b9ab0ed1b60;
+				revision = c366dec7ece90376d53f9dca75ca8448f42c85b7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
