@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.001
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("1_3lu4e")]
 
 [node name="Text Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.009, 0, 0, 0, 10.009, 0, 0, 0, 10.009, 0, 0.539946, 0)
+transform = Transform3D(10.009, 0, 0, 0, 10.009, 0, 0, 0, 10.009, 0, 0.539946, -0.496924)
 mesh = SubResource("TextMesh_14eta")
 script = ExtResource("2_32yj7")
 
