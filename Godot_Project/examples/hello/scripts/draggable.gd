@@ -5,7 +5,7 @@ signal drag(current_position: Vector3, start_position: Vector3, expected_end: Ve
 signal drag_ended
 
 func _ready():
-	drag.connect(func(current_position: Vector3, _start_position: Vector3, expected_end: Vector3):
+	drag.connect(func(current_position: Vector3, _start_position: Vector3, _expected_end: Vector3):
 		self.global_position = current_position
 	)
 	drag_ended.connect(func():
