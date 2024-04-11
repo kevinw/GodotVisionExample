@@ -2,6 +2,8 @@
 
 ![Screenshot showing Godot project running in the visionOS Simulator](docs/screenshot1.jpg)
 
+### Questions? Join the [GodotVision Discord](https://discord.gg/WYxyWMAM)
+
 An example Xcode project which has [GodotVision](https://github.com/kevinw/GodotVision) as a package dependency, and an example Godot project in `Godot_Project`. 
 
 ## To Run
