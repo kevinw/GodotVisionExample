@@ -6,7 +6,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kevinw/GodotVision.git",
       "state" : {
-        "revision" : "bb6c4fea863a90deb8d372b2615365453de18239"
+        "revision" : "e23f3f637bc55c846499452064502b042202ea57"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
-        "revision" : "64889f0c732f210a935a0ad7cda38f77f876262d",
-        "version" : "509.1.1"
+        "revision" : "fa8f95c2d536d6620cc2f504ebe8a6167c9fc2dd",
+        "version" : "510.0.1"
       }
     },
     {
@@ -23,7 +23,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/multijam/SwiftGodot",
       "state" : {
-        "revision" : "3cf5baa7d9800927d3829065b9ca7a2409a64b8b"
+        "revision" : "75bd743c9a6c263f75604dfb71bff718b8ea28ab"
       }
     },
     {
@@ -31,7 +31,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/multijam/SwiftGodotKit",
       "state" : {
-        "revision" : "bc653e83b1bde52a03ba90a2ed5e2a3ddb7ba3f5"
+        "revision" : "275c991756f6aedb203bb7363274868785e634b8"
       }
     }
   ],
