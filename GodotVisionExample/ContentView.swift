@@ -41,7 +41,7 @@ struct ContentView: View {
                         Button {
                             godotVision.reloadScene()
                         } label: {
-                            Text("Reload Scene")
+                            Text("Reload")
                         }
                         
                         Button {
@@ -65,7 +65,13 @@ struct ContentView: View {
                         Button {
                             godotVision.changeSceneToFile(atResourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
                         } label: {
-                            Text("Rigged Models")
+                            Text("Skeletons")
+                        }
+                        
+                        Button {
+                            godotVision.changeSceneToFile(atResourcePath: "res://examples/csg/csg.tscn")
+                        } label: {
+                            Text("CSG")
                         }
                     }.padding(36).frame(width: 700).glassBackgroundEffect()
                 }

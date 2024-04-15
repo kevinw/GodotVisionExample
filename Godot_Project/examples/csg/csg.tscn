@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2dmyhc53bqy2"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_7nj2j"]
-[ext_resource type="Script" path="res://examples/hello/csg/example_rotater.gd" id="2_ujl7s"]
+[ext_resource type="Script" path="res://examples/csg/example_rotater.gd" id="2_ujl7s"]
 
 [node name="Example - CSG" type="Node3D"]
 
