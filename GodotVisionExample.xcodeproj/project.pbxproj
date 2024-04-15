@@ -84,6 +84,7 @@
 				DE54EAA82B3C75D500594A05 /* Sources */,
 				DE54EAA92B3C75D500594A05 /* Frameworks */,
 				DE54EAAA2B3C75D500594A05 /* Resources */,
+				DE0F24412BC86C0600C09903 /* Run Script */,
 			);
 			buildRules = (
 			);
