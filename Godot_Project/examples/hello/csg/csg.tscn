@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2dmyhc53bqy2"]
+
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_7nj2j"]
+[ext_resource type="Script" path="res://examples/hello/csg/example_rotater.gd" id="2_ujl7s"]
+
+[node name="Example - CSG" type="Node3D"]
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_7nj2j")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.889974, 0.140082, -0.433962, 0.259297, 0.627371, 0.734283, 0.375115, -0.766018, 0.522021, 0, 0, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 2.57
+radial_segments = 30
+rings = 40
+script = ExtResource("2_ujl7s")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 0.1362, 0.990681, 0, -0.990681, 0.1362, 0, -0.0160113, -2.11164)
+operation = 2
+size = Vector3(1, 1.66309, 4.3894)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGSphere3D"]
+transform = Transform3D(0.778411, 0.349992, -0.521135, -0.411454, 0.911427, -0.00247024, 0.474112, 0.216346, 0.853471, 1.07407, 1.45654, 1.84698)
+operation = 2
+size = Vector3(2.24805, 2.42334, 2.3291)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGSphere3D"]
+transform = Transform3D(-0.339005, -0.154303, -0.465972, -0.24545, 0.543705, -0.0014736, 0.42508, 0.190888, -0.372467, -1.31939, -1.03592, 1.50636)
+operation = 2
+size = Vector3(2.24805, 2.42334, 2.3291)
