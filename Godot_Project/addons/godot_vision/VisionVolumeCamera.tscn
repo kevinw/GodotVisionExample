@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/godot_vision/vision_volume_camera.gd" id="1_bqg8h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2vsb"]
-size = Vector3(20, 10, 15)
+size = Vector3(18, 10, 15)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_6ppar"]
 sun_disk_scale = 21.2
