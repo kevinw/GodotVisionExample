@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwxt880aodsau"]
+
+[ext_resource type="Script" path="res://examples/camera_rotation/test_camera_rotation.gd" id="1_qkm28"]
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_voaop"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0ixi"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5m4tc"]
+material = SubResource("StandardMaterial3D_c0ixi")
+size = Vector3(1, 1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8kml"]
+albedo_color = Color(1, 0.0431373, 0.0235294, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s4ay3"]
+material = SubResource("StandardMaterial3D_g8kml")
+size = Vector3(1, 1, 0.1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ap0fu"]
+material = SubResource("StandardMaterial3D_g8kml")
+size = Vector3(1, 0.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45vx0"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xtsrd"]
+material = SubResource("StandardMaterial3D_45vx0")
+size = Vector3(1, 1, 0.1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ndxyc"]
+material = SubResource("StandardMaterial3D_45vx0")
+size = Vector3(1, 0.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmp3s"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="CameraRotationExample" type="Node3D"]
+script = ExtResource("1_qkm28")
+
+[node name="Object" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Object"]
+transform = Transform3D(1, 0, 0, 0, 0.969967, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5m4tc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Object"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_s4ay3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Object"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0.747964, 0)
+mesh = SubResource("PrismMesh_ap0fu")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Object"]
+transform = Transform3D(-2.30028e-08, 0.99555, -4.42442e-08, -8.02307e-24, -4.35169e-08, -1.01219, -0.526243, -4.35169e-08, 1.93398e-15, 0, 0, 0)
+mesh = SubResource("BoxMesh_xtsrd")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Object"]
+transform = Transform3D(-2.30028e-08, 0.99555, -4.42442e-08, -8.02307e-24, -4.35169e-08, -1.01219, -0.526243, -4.35169e-08, 1.93398e-15, 0.75, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("PrismMesh_ndxyc")
+skeleton = NodePath("../..")
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_voaop")]
+
+[node name="reference_mesh" type="MeshInstance3D" parent="VisionVolumeCamera"]
+mesh = SubResource("BoxMesh_cmp3s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.760995, 0.293167, -0.57874, 1.86432e-16, 0.892074, 0.45189, 0.648758, -0.343886, 0.678864, 0, 0, 0)
