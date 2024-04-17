@@ -71,6 +71,7 @@ shape = SubResource("BoxShape3D_ttl84")
 [node name="Play Sound Button" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20155, -1.90392, -0.700861)
 collision_mask = 0
+input_capture_on_drag = true
 script = ExtResource("5_lq6td")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Play Sound Button"]

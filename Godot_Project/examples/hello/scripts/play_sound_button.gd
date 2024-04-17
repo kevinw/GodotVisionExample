@@ -4,7 +4,16 @@ extends StaticBody3D
 # method instead of ".play()" so that RealityKit can know to play the audio.
 @onready var audio_stream_player: RKAudioStreamPlayer3D = $RKAudioStreamPlayer3D
 
-func _on_input_event(_camera, event, _position, _normal, _shape_idx):
+func set_override_color(color):
+	var mesh := $MeshInstance3D as MeshInstance3D
+	var material: Material = null
+	if color != null:
+		material = StandardMaterial3D.new()
+		material.albedo_color = color
+	mesh.set_surface_override_material(0, material)
 
-	if event is InputEventMouseButton  and event.pressed:
-		audio_stream_player.play_rk() # see note above
+func _on_input_event(_camera, event, _position, _normal, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			audio_stream_player.play_rk() # see note above
+		set_override_color(Color.DARK_RED if event.pressed else null)
