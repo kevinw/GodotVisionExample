@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwxt880aodsau"]
+[gd_scene load_steps=15 format=3 uid="uid://bwxt880aodsau"]
 
 [ext_resource type="Script" path="res://examples/camera_rotation/test_camera_rotation.gd" id="1_qkm28"]
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_voaop"]
+[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="3_rolhg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0ixi"]
 albedo_color = Color(0, 0, 1, 1)
@@ -34,6 +35,15 @@ size = Vector3(1, 0.5, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmp3s"]
 size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyu35"]
+albedo_texture = ExtResource("3_rolhg")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f6g3q"]
+material = SubResource("StandardMaterial3D_nyu35")
+size = Vector3(3, 0.05, 3)
 
 [node name="CameraRotationExample" type="Node3D"]
 script = ExtResource("1_qkm28")
@@ -72,3 +82,7 @@ mesh = SubResource("BoxMesh_cmp3s")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.760995, 0.293167, -0.57874, 1.86432e-16, 0.892074, 0.45189, 0.648758, -0.343886, 0.678864, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+mesh = SubResource("BoxMesh_f6g3q")
