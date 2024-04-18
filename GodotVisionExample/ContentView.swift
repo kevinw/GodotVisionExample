@@ -6,7 +6,7 @@ import GodotVision
 
 struct ContentView: View {
     @StateObject private var godotVision = GodotVisionCoordinator()
-    
+
     var body: some View {
         GeometryReader3D { (geometry: GeometryProxy3D) in
             RealityView { content, attachments in
@@ -38,46 +38,32 @@ struct ContentView: View {
             } attachments: {
                 Attachment(id: "ui_panel") {
                     HStack {
-                        Button {
-                            godotVision.reloadScene()
-                        } label: {
+                        // A button to reload the current scene.
+                        Button { godotVision.reloadScene() } label: {
                             Text("Reload")
                         }
                         
-                        Button {
-                            godotVision.changeSceneToFile(atResourcePath: "res://examples/hello/example_godot_vision_scene.tscn")
-                        } label: {
-                            Text("Hello")
-                        }
+                        // Buttons for loading example scenes.
+                        sceneButton(label: "Hello", resourcePath: "res://examples/hello/example_godot_vision_scene.tscn")
+                        sceneButton(label: "Physics", resourcePath: "res://examples/physics_toy/physics_toy.tscn")
+                        sceneButton(label: "Materials", resourcePath: "res://examples/materials/materials.tscn")
+                        sceneButton(label: "Skeletons", resourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
+                        sceneButton(label: "CSG", resourcePath: "res://examples/csg/csg.tscn")
                         
-                        Button {
-                            godotVision.changeSceneToFile(atResourcePath: "res://examples/physics_toy/physics_toy.tscn")
-                        } label: {
-                            Text("Physics")
-                        }
-                        
-                        Button {
-                            godotVision.changeSceneToFile(atResourcePath: "res://examples/materials/materials.tscn")
-                        } label: {
-                            Text("Materials")
-                        }
-                        
-                        Button {
-                            godotVision.changeSceneToFile(atResourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
-                        } label: {
-                            Text("Skeletons")
-                        }
-                        
-                        Button {
-                            godotVision.changeSceneToFile(atResourcePath: "res://examples/csg/csg.tscn")
-                        } label: {
-                            Text("CSG")
-                        }
                     }.padding(36).frame(width: 700).glassBackgroundEffect()
                 }
             }
         }
         .modifier(GodotVisionRealityViewModifier(coordinator: godotVision))
+    }
+        
+    @ViewBuilder
+    func sceneButton(label: String, resourcePath: String) -> some View {
+        Button {
+            godotVision.changeSceneToFile(atResourcePath: resourcePath)
+        } label: {
+            Text(label)
+        }
     }
 }
 
