@@ -16,7 +16,7 @@ albedo_color = Color(0.803922, 0, 0.803922, 1)
 material = SubResource("StandardMaterial3D_0aq11")
 text = "Drag Me"
 
-[node name="Example GodotVision Scene" type="Node3D"]
+[node name="Drag Test" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
 
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("1_h4nnu")]

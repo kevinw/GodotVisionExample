@@ -46,7 +46,7 @@ struct ContentView: View {
                         // Buttons for loading example scenes.
                         sceneButton(label: "Hello", resourcePath: "res://examples/hello/example_godot_vision_scene.tscn")
                         sceneButton(label: "Physics", resourcePath: "res://examples/physics_toy/physics_toy.tscn")
-                        sceneButton(label: "Materials", resourcePath: "res://examples/materials/materials.tscn")
+                        //sceneButton(label: "Materials", resourcePath: "res://tests/materials/materials.tscn")
                         sceneButton(label: "Skeletons", resourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
                         sceneButton(label: "CSG", resourcePath: "res://examples/csg/csg.tscn")
                         
