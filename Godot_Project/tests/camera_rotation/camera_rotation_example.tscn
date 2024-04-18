@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bwxt880aodsau"]
 
-[ext_resource type="Script" path="res://examples/camera_rotation/test_camera_rotation.gd" id="1_qkm28"]
+[ext_resource type="Script" path="res://tests/camera_rotation/test_camera_rotation.gd" id="1_qkm28"]
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_voaop"]
-[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/car-chase-godot-vision/textures/checker.jpg" id="3_rolhg"]
+[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="3_rolhg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0ixi"]
 albedo_color = Color(0, 0, 1, 1)

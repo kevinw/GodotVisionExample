@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://nnhkfeyaceaf"]
+
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_h4nnu"]
+[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="2_rnoc5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5oa15"]
+size = Vector3(1.5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfpgq"]
+size = Vector3(1.5, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aq11"]
+albedo_color = Color(0.803922, 0, 0.803922, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_yuig5"]
+material = SubResource("StandardMaterial3D_0aq11")
+text = "Drag Me"
+
+[node name="Example GodotVision Scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_h4nnu")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VisionVolumeCamera"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.688506, 0.382906, -0.615907, -4.30062e-16, 0.849257, 0.527979, 0.72523, -0.363517, 0.584719, 0, 0, 0)
+
+[node name="Drag Me Button" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+collision_mask = 0
+script = ExtResource("2_rnoc5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button"]
+shape = SubResource("BoxShape3D_5oa15")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button"]
+mesh = SubResource("BoxMesh_rfpgq")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_yuig5")
+
+[connection signal="input_event" from="Drag Me Button" to="Drag Me Button" method="_on_input_event"]
