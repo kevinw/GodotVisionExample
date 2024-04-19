@@ -12,8 +12,15 @@ func set_override_color(color):
 		material.albedo_color = color
 	mesh.set_surface_override_material(0, material)
 
+func clear_override_color():
+	var mesh := $MeshInstance3D as MeshInstance3D
+	mesh.set_surface_override_material(0, null)
+
 func _on_input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			audio_stream_player.play_rk() # see note above
-		set_override_color(Color.DARK_RED if event.pressed else null)
+			set_override_color(Color.DARK_RED)
+		else:
+			clear_override_color()
+		
