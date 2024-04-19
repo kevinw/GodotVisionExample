@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=20 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
 [ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="7_w56wj"]
 [ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="8_acynk"]
+[ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53i7p"]
 albedo_color = Color(1, 0.603922, 1, 1)
@@ -103,6 +104,8 @@ mesh = SubResource("BoxMesh_rfpgq")
 [node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
 transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
 mesh = SubResource("TextMesh_yuig5")
+script = ExtResource("9_quqbi")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
 [connection signal="input_event" from="Drag Me Button" to="Drag Me Button" method="_on_input_event"]
+[connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]

@@ -1,16 +1,17 @@
 extends Node
 
-signal drag
-signal drag_ended
+signal spatial_drag(Dictionary)
 
 func _ready():
-	drag.connect(func(params: Dictionary):
-		self.global_transform = params['global_transform']
+	spatial_drag.connect(on_spatial_drag)
+	
+func on_spatial_drag(params: Dictionary):
+	# Move in 3D with the spatial gesture.
+	self.global_transform = params['global_transform'] 
+	
+	# OR if you wanted to change just the position:
+	# self.global_transform = params['global_transform'].origin
 
-		# if you wanted just the position:
-		# self.global_transform = params['global_transform'].origin
-	)
 
-	drag_ended.connect(func():
-		print("drag ended")
-	)
+func _exit_tree():
+	spatial_drag.disconnect(on_spatial_drag)

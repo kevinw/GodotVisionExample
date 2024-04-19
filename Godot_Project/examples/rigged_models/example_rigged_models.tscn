@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfecatyesa0qe"]
+[gd_scene load_steps=9 format=3 uid="uid://bfecatyesa0qe"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_yurvt"]
+[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="2_b77b2"]
 [ext_resource type="PackedScene" uid="uid://dju3kiiixe4x7" path="res://examples/rigged_models/models/low_poly_alpaca/scene.gltf" id="2_dl1bm"]
 [ext_resource type="Script" path="res://examples/hello/scripts/auto_play_anim.gd" id="3_p0m65"]
 [ext_resource type="Script" path="res://examples/physics_toy/scripts/spring_test.gd" id="4_1u621"]
 [ext_resource type="PackedScene" uid="uid://h2hleasl7813" path="res://examples/physics_toy/prefabs/spring.tscn" id="5_vr207"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3blw"]
+size = Vector3(1.43, 6.35394, 4.78)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_arjfy"]
+height = 4.238
+radius = 1.708
 
 [node name="Node3D" type="Node3D"]
 
@@ -15,15 +23,32 @@ transform = Transform3D(0.190262, 0.94702, -0.258754, -0.561008, 0.321175, 0.762
 
 [node name="Objects" type="Node3D" parent="."]
 
-[node name="llama" parent="Objects" instance=ExtResource("2_dl1bm")]
+[node name="Llama Draggable" type="AnimatableBody3D" parent="Objects"]
+input_capture_on_drag = true
+script = ExtResource("2_b77b2")
+
+[node name="llama" parent="Objects/Llama Draggable" instance=ExtResource("2_dl1bm")]
 transform = Transform3D(1.22296, 0, 0, 0, 1.22296, 0, 0, 0, 1.22296, 2.08165e-12, -2.08652, 2.08165e-12)
 script = ExtResource("3_p0m65")
 animation_name = "Walk"
 
-[node name="SpringTest" type="Node3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74511, -1.29528, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Llama Draggable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05392, 0.427021)
+shape = SubResource("BoxShape3D_n3blw")
+
+[node name="Spring Draggable" type="AnimatableBody3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74511, -1.29528, 2.08165e-12)
+input_capture_on_drag = true
+script = ExtResource("2_b77b2")
+
+[node name="SpringTest" type="Node3D" parent="Objects/Spring Draggable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.08165e-12)
 script = ExtResource("4_1u621")
 
-[node name="Spring" parent="Objects/SpringTest" instance=ExtResource("5_vr207")]
+[node name="Spring" parent="Objects/Spring Draggable/SpringTest" instance=ExtResource("5_vr207")]
 transform = Transform3D(9.23965, 0, 0, 0, 9.23965, 0, 0, 0, 9.23965, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 manual_spring_factor = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Spring Draggable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44389, 0)
+shape = SubResource("CylinderShape3D_arjfy")
