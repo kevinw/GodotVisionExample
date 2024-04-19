@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5vucxnx28wt3"]
+
+[ext_resource type="Script" path="res://addons/godot_vision/GodotVision_autoload.gd" id="1_w221q"]
+
+[node name="GodotVision_autoload" type="Node"]
+script = ExtResource("1_w221q")
