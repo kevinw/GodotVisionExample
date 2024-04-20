@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://tmu3qtedjbbw"]
+
+[ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="1_2m6p3"]
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="2_x6x3v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi11a"]
+albedo_texture = ExtResource("1_2m6p3")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("2_x6x3v")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.633948, 0.376368, -0.675616, 2.43785e-17, 0.873594, 0.486656, 0.773376, -0.308514, 0.553813, 0, 0, 0)
+
+[node name="Scene" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1.24146, 0)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Scene"]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1.61006, -0.885131, -0.642553, 0.927015, 0.892323, 0.936577, 1.02559, -0.656505, -0.24, -1.98)
+depth = 0.23
+material = SubResource("StandardMaterial3D_qi11a")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Scene/CSGPolygon3D"]
+transform = Transform3D(0.857984, -0.513676, -2.24535e-08, 0.513676, 0.857984, -6.20771e-09, 2.24535e-08, -6.20771e-09, 1, -0.80101, 1.27625, -0.328236)
+operation = 2
+size = Vector3(1, 1, 1.96436)
