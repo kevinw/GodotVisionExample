@@ -90,7 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 stream = ExtResource("6_3x8lp")
 script = ExtResource("7_w56wj")
 
-[node name="Drag Me Button" type="StaticBody3D" parent="."]
+[node name="Drag Me Button" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32111, -1.90392, -0.700861)
 collision_mask = 0
 script = ExtResource("8_acynk")
@@ -107,5 +107,4 @@ mesh = SubResource("TextMesh_yuig5")
 script = ExtResource("9_quqbi")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
-[connection signal="input_event" from="Drag Me Button" to="Drag Me Button" method="_on_input_event"]
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
