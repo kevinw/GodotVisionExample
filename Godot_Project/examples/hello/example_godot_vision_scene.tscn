@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=19 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
@@ -84,10 +84,9 @@ mesh = SubResource("BoxMesh_rfpgq")
 transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
 mesh = SubResource("TextMesh_l018j")
 
-[node name="RKAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Play Sound Button"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Play Sound Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 stream = ExtResource("6_3x8lp")
-script = ExtResource("7_w56wj")
 
 [node name="Drag Me Button" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32111, -1.90392, -0.700861)
