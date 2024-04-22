@@ -73,6 +73,7 @@ func _simulate_godot_vision_drag_signal(node: CollisionObject3D):
 				ctx["orig_node_position"] = node.global_position
 				ctx["length"] = (camera.global_position - node.global_position).length() # No, use 'position' converted to global
 				ctx["orig_event_pos"] = camera.project_position(buttonEvent.position, ctx["length"])
+				ctx["last_motion_event_position"] = buttonEvent.position
 				
 			elif ctx["dragging"] and not buttonEvent.pressed:
 				# stop dragging
