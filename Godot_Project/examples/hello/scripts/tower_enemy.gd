@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@onready var anim_player = $character_meshes/AnimationPlayer
+@onready var anim_player = $character_meshes/AnimationPlayer as AnimationPlayer
 
 @onready var initial_global_position: Vector3 = self.global_position
 

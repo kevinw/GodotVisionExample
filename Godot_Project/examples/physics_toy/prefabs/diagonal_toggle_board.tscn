@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxbkpri64rh7f"]
+[gd_scene load_steps=9 format=3 uid="uid://bxbkpri64rh7f"]
 
 [ext_resource type="Script" path="res://examples/physics_toy/scripts/diagonal_toggle_board.gd" id="1_jq6sw"]
 [ext_resource type="AudioStream" uid="uid://cyi7jwxbakwsc" path="res://examples/physics_toy/sounds/71774__lg__switch-22.mp3" id="2_gq8rv"]
-[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="3_ypvxh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i4leg"]
 size = Vector3(1, 0.03, 1)
@@ -51,6 +50,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lioj3")
 
 [node name="sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_gq8rv")
-script = ExtResource("3_ypvxh")
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

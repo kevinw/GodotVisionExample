@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var body = $StaticBody3D
-@onready var sound: RKAudioStreamPlayer3D = $sound
+@onready var sound: AudioStreamPlayer3D = $sound
 
 func _on_static_body_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -18,6 +18,6 @@ func _on_static_body_3d_input_event(_camera, event, _position, _normal, _shape_i
 		t.set_ease(Tween.EASE_OUT)
 		t.set_trans(Tween.TRANS_SPRING)
 		
-		if sound: sound.play_rk()
+		if sound: sound.play()
 		
 

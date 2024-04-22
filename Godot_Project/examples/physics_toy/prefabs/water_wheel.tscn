@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cthxmr6qmrukk"]
+[gd_scene load_steps=9 format=3 uid="uid://cthxmr6qmrukk"]
 
 [ext_resource type="Script" path="res://examples/physics_toy/scripts/water_wheel.gd" id="1_dt4w6"]
 [ext_resource type="Script" path="res://examples/physics_toy/scripts/RotationSound.gd" id="2_56gtp"]
 [ext_resource type="AudioStream" uid="uid://c0qdwcat7rg0u" path="res://examples/physics_toy/sounds/108538__jfreem3__squeekywalkl.mp3" id="3_bsh51"]
-[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="3_fq2su"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64n2y"]
 size = Vector3(1.5, 0.1, 1)
@@ -60,10 +59,9 @@ mesh = SubResource("CylinderMesh_o8hfc")
 [node name="RotationSound" type="Node" parent="RigidBody3D"]
 script = ExtResource("2_56gtp")
 
-[node name="RKAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="RigidBody3D/RotationSound"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="RigidBody3D/RotationSound"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 stream = ExtResource("3_bsh51")
 volume_db = -14.546
-script = ExtResource("3_fq2su")
 
 [connection signal="input_event" from="RigidBody3D" to="." method="_on_rigid_body_3d_input_event"]

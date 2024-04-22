@@ -1,3 +1,9 @@
+#
+# 
+# THIS CLASS IS DEPRECATED--just use AudioStreamPlayer3D now.
+#
+#
+
 class_name RKAudioStreamPlayer3D
 extends AudioStreamPlayer3D
 

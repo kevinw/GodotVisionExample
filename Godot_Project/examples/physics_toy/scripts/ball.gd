@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var whoosh_sound: RKAudioStreamPlayer3D
+@export var whoosh_sound: AudioStreamPlayer3D
 
 signal did_acccel()
 

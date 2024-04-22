@@ -3,7 +3,7 @@ extends Node3D
 
 @export var spring_strength: float = 2.2
 @export var manual_spring_factor: bool = false
-@onready var audio: RKAudioStreamPlayer3D = $audio
+@onready var audio: AudioStreamPlayer3D = $audio
 
 var bodies = {}
 var skeleton: Skeleton3D
@@ -19,7 +19,7 @@ func _on_area_3d_body_entered(body):
 		bodies[body] = true
 		
 		if audio:
-			audio.play_rk()
+			audio.play()
 
 func _on_area_3d_body_exited(body):
 	bodies.erase(body)

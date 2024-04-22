@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://h2hleasl7813"]
+[gd_scene load_steps=5 format=3 uid="uid://h2hleasl7813"]
 
 [ext_resource type="Script" path="res://examples/physics_toy/scripts/spring.gd" id="1_v5ipw"]
 [ext_resource type="PackedScene" uid="uid://bk2vmbinktj6m" path="res://examples/physics_toy/models/spring_rigged/scene.gltf" id="2_ud3c5"]
 [ext_resource type="AudioStream" uid="uid://iefg5x3eq1oa" path="res://examples/physics_toy/sounds/540788__magnuswaker__boing-1.mp3" id="3_kp288"]
-[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="4_l0st8"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5b6jk"]
 height = 0.270341
@@ -26,7 +25,6 @@ shape = SubResource("CylinderShape3D_5b6jk")
 [node name="audio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_kp288")
 volume_db = -8.571
-script = ExtResource("4_l0st8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

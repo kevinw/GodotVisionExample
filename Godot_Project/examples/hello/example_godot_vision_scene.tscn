@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
 [ext_resource type="Script" path="res://examples/hello/scripts/play_sound_button.gd" id="5_lq6td"]
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
-[ext_resource type="Script" path="res://addons/godot_vision/rk_audio_stream_player_3d.gd" id="7_w56wj"]
 [ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="8_acynk"]
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
 
