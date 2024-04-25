@@ -1,8 +1,7 @@
 extends Node
 class_name GodotVision_autoload
 
-
-
+@onready var share_play: SharePlay = $SharePlay
 var scene_tree: SceneTree
 
 func running_on_vision():
@@ -11,14 +10,14 @@ func running_on_vision():
 func _enter_tree():
 	if !running_on_vision():
 		scene_tree = get_tree()
-		scene_tree.node_added.connect(on_node_added)
+		scene_tree.node_added.connect(_on_node_added)
 	
 func _exit_tree():
 	if !running_on_vision():
-		scene_tree.node_added.disconnect(on_node_added)
+		scene_tree.node_added.disconnect(_on_node_added)
 		scene_tree = null
 	
-func on_node_added(node: Node):
+func _on_node_added(node: Node):
 	if node.has_signal("spatial_drag"):		
 		var col := node as CollisionObject3D
 		if col:

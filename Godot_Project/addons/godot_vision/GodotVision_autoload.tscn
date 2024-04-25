@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5vucxnx28wt3"]
+[gd_scene load_steps=3 format=3 uid="uid://c5vucxnx28wt3"]
 
 [ext_resource type="Script" path="res://addons/godot_vision/GodotVision_autoload.gd" id="1_w221q"]
+[ext_resource type="Script" path="res://addons/godot_vision/SharePlay.gd" id="2_61mna"]
 
 [node name="GodotVision_autoload" type="Node"]
 script = ExtResource("1_w221q")
+
+[node name="SharePlay" type="Node" parent="."]
+script = ExtResource("2_61mna")

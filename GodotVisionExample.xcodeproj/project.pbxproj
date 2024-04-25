@@ -343,7 +343,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.GodotVision;
+				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -377,7 +377,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.GodotVision;
+				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,7 +424,7 @@
 			repositoryURL = "https://github.com/kevinw/GodotVision.git";
 			requirement = {
 				kind = revision;
-				revision = 118e06ea721f457d6582327abd98f750c6435dc1;
+				revision = 5dc0e9f5c2cc1a660dd7e21f6f55a382dfc1fe62;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
