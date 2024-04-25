@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbbu56gcmmc6n"]
+
+[ext_resource type="Script" path="res://addons/godot_vision/auto_join_shareplay.gd" id="1_4pdjb"]
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="2_xe0xt"]
+[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="3_1q28r"]
+[ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="4_knt32"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wwgva"]
+height = 0.455507
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2cps"]
+size = Vector3(1.5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2jjjg"]
+size = Vector3(1.5, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aq11"]
+albedo_color = Color(0.803922, 0, 0.803922, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_6pa4w"]
+material = SubResource("StandardMaterial3D_0aq11")
+text = "Drag Me"
+
+[node name="MultiplayerExample" type="Node3D"]
+
+[node name="AutoJoinSharePlay" type="Node3D" parent="."]
+visible = false
+script = ExtResource("1_4pdjb")
+auto_join = null
+auto_share_input = null
+activity_name = "vision.godot.multiplayer-example"
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("2_xe0xt")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+input_capture_on_drag = true
+script = ExtResource("3_1q28r")
+metadata/hover_effect = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("CylinderShape3D_wwgva")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.345503, -0.268328, -0.899237, 0.613376, 0.789791, -2.58101e-08, 0.71021, -0.55157, 0.437461, 0, 0, 0)
+
+[node name="Drag Me Button" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32111, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18767, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button2"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button2"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button2"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button3" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86196, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button3"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button3"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button3"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button4" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button4"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button4"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button4"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button2" to="Drag Me Button2/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button3" to="Drag Me Button3/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button4" to="Drag Me Button4/Label" method="_on_drag_me_button_spatial_drag"]
