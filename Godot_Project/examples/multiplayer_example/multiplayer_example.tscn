@@ -27,9 +27,6 @@ text = "Drag Me"
 [node name="AutoJoinSharePlay" type="Node3D" parent="."]
 visible = false
 script = ExtResource("1_4pdjb")
-auto_join = null
-auto_share_input = null
-activity_name = "vision.godot.multiplayer-example"
 
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("2_xe0xt")]
 

@@ -14,6 +14,7 @@ func join():
 	if not share_play:
 		return
 	
+	print("calling auto_join_activity from GODOT....")
 	share_play.automatically_share_input = auto_share_input
 	share_play.auto_join_activity()
 	
