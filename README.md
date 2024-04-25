@@ -1,10 +1,16 @@
 # GodotVisionExample
 
+An example project for [GodotVision](https://github.com/kevinw/GodotVision).
+
+
+
 ![Screenshot showing Godot project running in the visionOS Simulator](docs/screenshot1.jpg)
+
+This Xcode example project specifies GodotVision as a package dependency, and has an example Godot project in `Godot_Project`. 
+
 
 ### Questions? Join the [GodotVision Discord](https://discord.gg/XvB4dwGUtF)
 
-An example Xcode project which has [GodotVision](https://github.com/kevinw/GodotVision) as a package dependency, and an example Godot project in `Godot_Project`. 
 
 ## To Run
 
