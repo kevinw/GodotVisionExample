@@ -16,7 +16,8 @@ struct ContentView: View {
                 // Initialize Godot
                 let rkEntityGodotRoot = godotVision.setupRealityKitScene(content,
                                                                          volumeSize: VOLUME_SIZE,
-                                                                         projectFileDir: pathToGodotProject)
+                                                                         projectFileDir: pathToGodotProject,
+                                                                         sharePlayActivityId: SHAREPLAY_ACTIVITY_ID)
                 
                 print("Godot scene root: \(rkEntityGodotRoot)")
                 
@@ -49,7 +50,8 @@ struct ContentView: View {
                         //sceneButton(label: "Materials", resourcePath: "res://tests/materials/materials.tscn")
                         sceneButton(label: "Skeletons", resourcePath: "res://examples/rigged_models/example_rigged_models.tscn")
                         sceneButton(label: "CSG", resourcePath: "res://examples/csg/csg.tscn")
-                        
+                        sceneButton(label: "Multiplayer", resourcePath: "res://examples/multiplayer_example/multiplayer_example.tscn")
+
                     }.padding(36).frame(width: 700).glassBackgroundEffect()
                 }
             }
