@@ -8,7 +8,7 @@ import SwiftUI
 let VOLUME_SIZE = simd_double3(1.8, 1.0, 1.5)
 
 #if true // multiplayer
-let SHAREPLAY_ACTIVITY_ID = Bundle.main.bundleIdentifier! + ".example-activity"
+let SHAREPLAY_ACTIVITY_ID = Bundle.main.bundleIdentifier! + ".example-activity" // See https://developer.apple.com/documentation/groupactivities/groupactivity
 let multiplayerExternalEvents: Set<String> = [SHAREPLAY_ACTIVITY_ID]
 #else
 let multiplayerExternalEvents: Set<String> = []
@@ -19,7 +19,7 @@ struct GodotVisionExample: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .handlesExternalEvents(preferring: multiplayerExternalEvents,
+                .handlesExternalEvents(preferring: multiplayerExternalEvents, // for invites to SharePlay sessions
                                        allowing: multiplayerExternalEvents)
         }
         .windowStyle(.volumetric)
