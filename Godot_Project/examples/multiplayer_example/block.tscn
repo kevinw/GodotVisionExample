@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccxgwt6uspo8m"]
+
+[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="1_21ky7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2cps"]
+size = Vector3(1, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2jjjg"]
+size = Vector3(1, 0.5, 0.5)
+
+[node name="Drag Me Button" type="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32111, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("1_21ky7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2jjjg")

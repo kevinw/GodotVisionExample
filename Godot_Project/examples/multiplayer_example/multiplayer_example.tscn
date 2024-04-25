@@ -106,7 +106,126 @@ transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603
 mesh = SubResource("TextMesh_6pa4w")
 script = ExtResource("4_knt32")
 
+[node name="Drag Me Button5" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button5"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button5"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button5"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button6" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button6"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button6"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button6"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button7" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button7"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button7"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button7"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button8" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button8"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button8"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button8"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button9" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button9"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button9"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button9"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button10" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button10"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button10"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button10"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
+[node name="Drag Me Button11" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89629, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("3_1q28r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button11"]
+shape = SubResource("BoxShape3D_r2cps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button11"]
+mesh = SubResource("BoxMesh_2jjjg")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button11"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_6pa4w")
+script = ExtResource("4_knt32")
+
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
 [connection signal="spatial_drag" from="Drag Me Button2" to="Drag Me Button2/Label" method="_on_drag_me_button_spatial_drag"]
 [connection signal="spatial_drag" from="Drag Me Button3" to="Drag Me Button3/Label" method="_on_drag_me_button_spatial_drag"]
 [connection signal="spatial_drag" from="Drag Me Button4" to="Drag Me Button4/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button5" to="Drag Me Button5/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button6" to="Drag Me Button6/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button7" to="Drag Me Button7/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button8" to="Drag Me Button8/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button9" to="Drag Me Button9/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button10" to="Drag Me Button10/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button11" to="Drag Me Button11/Label" method="_on_drag_me_button_spatial_drag"]
