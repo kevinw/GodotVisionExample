@@ -8,12 +8,21 @@ import SwiftUI
 let VOLUME_SIZE = simd_double3(1.8, 1.0, 1.5)
 
 @main
+@MainActor
 struct GodotVisionExample: App {
+    @State private var model = EntityModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MenuView()
         }
-        .windowStyle(.volumetric)
-        .defaultSize(width: VOLUME_SIZE.x, height: VOLUME_SIZE.y, depth: VOLUME_SIZE.z, in: .meters)
+        .windowStyle(.plain)
+        
+        WindowGroup(id: "error") {
+            Text("An error occurred; check the app's logs for details.")
+        }
+        
+        ImmersiveSpace(id: "scene") {
+            ContentView().environment(model)
+        }
     }
 }

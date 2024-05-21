@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3564678D2BFC511F0030DBF2 /* SceneReconstructionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564678C2BFC511F0030DBF2 /* SceneReconstructionHandler.swift */; };
+		35B095342BF6D82800E8F4E9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095332BF6D82800E8F4E9 /* MenuView.swift */; };
+		35B095362BF7081700E8F4E9 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095352BF7081700E8F4E9 /* EntityModel.swift */; };
+		35B095382BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095372BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift */; };
+		35B0953A2BFBA8E900E8F4E9 /* GeometryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095392BFBA8E800E8F4E9 /* GeometryUtilities.swift */; };
 		DE2E63972B718B10003F7878 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE2E63962B718B10003F7878 /* GodotVision */; };
 		DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */; };
 		DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB52B3C75D500594A05 /* ContentView.swift */; };
@@ -16,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3564678C2BFC511F0030DBF2 /* SceneReconstructionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneReconstructionHandler.swift; sourceTree = "<group>"; };
+		35B095322BF6D7AC00E8F4E9 /* GodotVision */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GodotVision; path = ../GodotVision; sourceTree = "<group>"; };
+		35B095332BF6D82800E8F4E9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		35B095352BF7081700E8F4E9 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
+		35B095372BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnchorHandler.swift; sourceTree = "<group>"; };
+		35B095392BFBA8E800E8F4E9 /* GeometryUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryUtilities.swift; sourceTree = "<group>"; };
 		DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodotVisionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExample.swift; sourceTree = "<group>"; };
 		DE54EAB52B3C75D500594A05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +51,7 @@
 		DE54EAA32B3C75D500594A05 = {
 			isa = PBXGroup;
 			children = (
+				35B095322BF6D7AC00E8F4E9 /* GodotVision */,
 				DEF363EC2B57F443005E175D /* Godot_Project */,
 				DE54EAAE2B3C75D500594A05 /* GodotVisionExample */,
 				DE54EAAD2B3C75D500594A05 /* Products */,
@@ -59,9 +71,14 @@
 			children = (
 				DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */,
 				DE54EAB52B3C75D500594A05 /* ContentView.swift */,
+				35B095332BF6D82800E8F4E9 /* MenuView.swift */,
 				DE54EAB92B3C75D600594A05 /* Assets.xcassets */,
 				DE54EABE2B3C75D600594A05 /* Info.plist */,
 				DE54EABB2B3C75D600594A05 /* Preview Content */,
+				35B095352BF7081700E8F4E9 /* EntityModel.swift */,
+				35B095372BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift */,
+				35B095392BFBA8E800E8F4E9 /* GeometryUtilities.swift */,
+				3564678C2BFC511F0030DBF2 /* SceneReconstructionHandler.swift */,
 			);
 			path = GodotVisionExample;
 			sourceTree = "<group>";
@@ -179,7 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B095382BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift in Sources */,
 				DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */,
+				35B095342BF6D82800E8F4E9 /* MenuView.swift in Sources */,
+				35B095362BF7081700E8F4E9 /* EntityModel.swift in Sources */,
+				3564678D2BFC511F0030DBF2 /* SceneReconstructionHandler.swift in Sources */,
+				35B0953A2BFBA8E900E8F4E9 /* GeometryUtilities.swift in Sources */,
 				DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +357,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "GodotVision Core Samples";
+				INFOPLIST_KEY_CFBundleDisplayName = "Music Visualizer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,7 +391,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "GodotVision Core Samples";
+				INFOPLIST_KEY_CFBundleDisplayName = "Music Visualizer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

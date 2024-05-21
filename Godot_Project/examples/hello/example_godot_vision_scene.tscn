@@ -1,13 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=24 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
+[ext_resource type="Script" path="res://examples/hello/scripts/main.gd" id="1_2653c"]
 [ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
-[ext_resource type="PackedScene" uid="uid://bb6s0wxfewce6" path="res://examples/hello/prefabs/tower_enemy.tscn" id="3_ywgnt"]
+[ext_resource type="Script" path="res://examples/hello/scripts/tower_enemy.gd" id="3_hrt24"]
+[ext_resource type="PackedScene" uid="uid://dlposbd8dupye" path="res://examples/hello/prefabs/character_meshes.tscn" id="4_rf71i"]
 [ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
 [ext_resource type="Script" path="res://examples/hello/scripts/play_sound_button.gd" id="5_lq6td"]
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
 [ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="8_acynk"]
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
+[ext_resource type="Script" path="res://examples/hello/scripts/planes.gd" id="10_6ov34"]
+[ext_resource type="Script" path="res://examples/hello/scripts/reconstruction_meshes.gd" id="12_xgcfq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53i7p"]
 albedo_color = Color(1, 0.603922, 1, 1)
@@ -16,20 +20,25 @@ albedo_color = Color(1, 0.603922, 1, 1)
 material = SubResource("StandardMaterial3D_53i7p")
 text = "Hello from Godot"
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8nec"]
+height = 1.5
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbryu"]
 albedo_texture = ExtResource("4_v0jkp")
 uv1_scale = Vector3(3, 3, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u4h1h"]
 material = SubResource("StandardMaterial3D_dbryu")
+size = Vector3(1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ttl84"]
+size = Vector3(1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5oa15"]
-size = Vector3(1.5, 1, 1)
+size = Vector3(0.3, 0.2, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rfpgq"]
-size = Vector3(1.5, 1, 1)
+size = Vector3(0.3, 0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aq11"]
 albedo_color = Color(0.803922, 0, 0.803922, 1)
@@ -43,66 +52,94 @@ Sound"
 material = SubResource("StandardMaterial3D_0aq11")
 text = "Drag Me"
 
-[node name="Example GodotVision Scene" type="Node3D"]
+[node name="main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
+script = ExtResource("1_2653c")
 
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("1_3lu4e")]
 
-[node name="Text Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.009, 0, 0, 0, 10.009, 0, 0, 0, 10.009, 0, 0.539946, -0.496924)
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32628, -4)
+
+[node name="Text Mesh" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.75192, 0, -0.964761, 0, 2, 0, 0.964761, 0, 1.75192, 2.13324, -2.53994, -0.496924)
 mesh = SubResource("TextMesh_14eta")
+skeleton = NodePath("../..")
 script = ExtResource("2_32yj7")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
 transform = Transform3D(0.688506, 0.382906, -0.615907, -4.30062e-16, 0.849257, 0.527979, 0.72523, -0.363517, 0.584719, 0, 0, 0)
 
-[node name="character" parent="." instance=ExtResource("3_ywgnt")]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 1.30854, 2.08165e-12)
+[node name="character" type="RigidBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, -3.43999, 0)
+collision_layer = 4
+collision_mask = 9
+input_ray_pickable = false
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_hrt24")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00369835, -3.60079, 0.00676847)
+[node name="character_shape" type="CollisionShape3D" parent="Node3D/character"]
+shape = SubResource("CapsuleShape3D_g8nec")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="character_meshes" parent="Node3D/character" instance=ExtResource("4_rf71i")]
+transform = Transform3D(-2.17199e-06, 2.09273e-16, 0.6, 2.09272e-16, 0.6, -2.09272e-16, -0.6, 2.09271e-16, -2.17199e-06, 0, 0, 0)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00369835, -5.25742, 0.00676847)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
 mesh = SubResource("BoxMesh_u4h1h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_ttl84")
 
-[node name="Play Sound Button" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20155, -1.90392, -0.700861)
+[node name="Play Sound Button" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.828021, -4.14362, -0.700861)
 collision_mask = 0
 input_capture_on_drag = true
 script = ExtResource("5_lq6td")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Play Sound Button"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Play Sound Button"]
 shape = SubResource("BoxShape3D_5oa15")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Play Sound Button"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Play Sound Button"]
 mesh = SubResource("BoxMesh_rfpgq")
 
-[node name="Label" type="MeshInstance3D" parent="Play Sound Button"]
-transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+[node name="Label" type="MeshInstance3D" parent="Node3D/Play Sound Button"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.0936251)
 mesh = SubResource("TextMesh_l018j")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Play Sound Button"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D/Play Sound Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 stream = ExtResource("6_3x8lp")
 
-[node name="Drag Me Button" type="AnimatableBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32111, -1.90392, -0.700861)
+[node name="Drag Me Button" type="AnimatableBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36119, -3.72856, -0.0029676)
 collision_mask = 0
 script = ExtResource("8_acynk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Drag Me Button"]
 shape = SubResource("BoxShape3D_5oa15")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Drag Me Button"]
 mesh = SubResource("BoxMesh_rfpgq")
 
-[node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
-transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+[node name="Label" type="MeshInstance3D" parent="Node3D/Drag Me Button"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0.0952425)
 mesh = SubResource("TextMesh_yuig5")
 script = ExtResource("9_quqbi")
 
-[connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
-[connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
+[node name="planes" type="Node3D" parent="."]
+script = ExtResource("10_6ov34")
+
+[node name="reconstruction_meshes" type="Node3D" parent="."]
+script = ExtResource("12_xgcfq")
+
+[connection signal="input_event" from="Node3D/Play Sound Button" to="Node3D/Play Sound Button" method="_on_input_event"]
+[connection signal="spatial_drag" from="Node3D/Drag Me Button" to="Node3D/Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
+
+[editable path="VisionVolumeCamera"]
