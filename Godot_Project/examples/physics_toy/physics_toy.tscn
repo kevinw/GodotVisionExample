@@ -11,6 +11,7 @@ size = Vector3(2, 1.3, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjt1l"]
 transparency = 1
+cull_mode = 2
 albedo_color = Color(0, 0, 1, 0.478431)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4iivh"]

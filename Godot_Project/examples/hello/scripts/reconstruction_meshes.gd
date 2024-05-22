@@ -24,6 +24,7 @@ func add_or_update_reconstruction_mesh(id: String, vertices: Array, faces: Array
 			for i in faces:
 				triangles.append(vertices[i])
 			var mesh = create_mesh_from_vertices(triangles)
+			#print("updating")
 			mesh_instance.mesh = mesh
 			mesh_instance.basis = Basis(quat)
 			mesh_instance.global_position = position
@@ -50,8 +51,7 @@ func create_mesh_from_vertices(vertices: PackedVector3Array) -> Mesh:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	shared_material.albedo_color = Color(0.0, 0.5, 0.8, 0.5)
-	shared_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	shared_material.albedo_color = Color(0.0, 0.5, 0.8)
 	pass # Replace with function body.
 
 

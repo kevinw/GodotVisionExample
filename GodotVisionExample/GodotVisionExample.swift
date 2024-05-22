@@ -11,6 +11,7 @@ let VOLUME_SIZE = simd_double3(1.8, 1.0, 1.5)
 @MainActor
 struct GodotVisionExample: App {
     @State private var model = EntityModel()
+    @State private var currentStyle: ImmersionStyle = .full                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
     var body: some Scene {
         WindowGroup {
             MenuView()
@@ -23,6 +24,6 @@ struct GodotVisionExample: App {
         
         ImmersiveSpace(id: "scene") {
             ContentView().environment(model)
-        }
+        }.immersionStyle(selection: $currentStyle, in: .full)
     }
 }

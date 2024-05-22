@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3564678D2BFC511F0030DBF2 /* SceneReconstructionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564678C2BFC511F0030DBF2 /* SceneReconstructionHandler.swift */; };
+		356467952BFD050A0030DBF2 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 356467942BFD050A0030DBF2 /* RealityKitContent */; };
+		356467982BFD05260030DBF2 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 356467972BFD05260030DBF2 /* RealityKitContent */; };
 		35B095342BF6D82800E8F4E9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095332BF6D82800E8F4E9 /* MenuView.swift */; };
 		35B095362BF7081700E8F4E9 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095352BF7081700E8F4E9 /* EntityModel.swift */; };
 		35B095382BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B095372BFBA6D600E8F4E9 /* PlaneAnchorHandler.swift */; };
@@ -22,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		3564678C2BFC511F0030DBF2 /* SceneReconstructionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneReconstructionHandler.swift; sourceTree = "<group>"; };
+		356467922BFD04F30030DBF2 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RealityKitContent; path = ../RealityKitContent; sourceTree = "<group>"; };
 		35B095322BF6D7AC00E8F4E9 /* GodotVision */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GodotVision; path = ../GodotVision; sourceTree = "<group>"; };
 		35B095332BF6D82800E8F4E9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		35B095352BF7081700E8F4E9 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
@@ -41,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356467952BFD050A0030DBF2 /* RealityKitContent in Frameworks */,
+				356467982BFD05260030DBF2 /* RealityKitContent in Frameworks */,
 				DE2E63972B718B10003F7878 /* GodotVision in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,13 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		356467932BFD050A0030DBF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE54EAA32B3C75D500594A05 = {
 			isa = PBXGroup;
 			children = (
+				356467922BFD04F30030DBF2 /* RealityKitContent */,
 				35B095322BF6D7AC00E8F4E9 /* GodotVision */,
 				DEF363EC2B57F443005E175D /* Godot_Project */,
 				DE54EAAE2B3C75D500594A05 /* GodotVisionExample */,
 				DE54EAAD2B3C75D500594A05 /* Products */,
+				356467932BFD050A0030DBF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +125,8 @@
 			name = GodotVisionExample;
 			packageProductDependencies = (
 				DE2E63962B718B10003F7878 /* GodotVision */,
+				356467942BFD050A0030DBF2 /* RealityKitContent */,
+				356467972BFD05260030DBF2 /* RealityKitContent */,
 			);
 			productName = GodotVisionExample;
 			productReference = DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */;
@@ -143,6 +159,7 @@
 			mainGroup = DE54EAA32B3C75D500594A05;
 			packageReferences = (
 				DE2E63952B718B10003F7878 /* XCRemoteSwiftPackageReference "GodotVision" */,
+				356467962BFD05260030DBF2 /* XCLocalSwiftPackageReference "../RealityKitContent" */,
 			);
 			productRefGroup = DE54EAAD2B3C75D500594A05 /* Products */;
 			projectDirPath = "";
@@ -434,6 +451,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		356467962BFD05260030DBF2 /* XCLocalSwiftPackageReference "../RealityKitContent" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../RealityKitContent;
+		};
 		DE5677452B702126002BABB4 /* XCLocalSwiftPackageReference "../GodotVision" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../GodotVision;
@@ -452,6 +473,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		356467942BFD050A0030DBF2 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		356467972BFD05260030DBF2 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
 		DE2E63962B718B10003F7878 /* GodotVision */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE2E63952B718B10003F7878 /* XCRemoteSwiftPackageReference "GodotVision" */;

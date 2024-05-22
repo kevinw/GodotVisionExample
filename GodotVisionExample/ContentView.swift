@@ -3,6 +3,7 @@
 import SwiftUI
 import RealityKit
 import GodotVision
+import RealityKitContent
 
 struct ContentView: View {
     @StateObject private var godotVision = GodotVisionCoordinator()
@@ -14,13 +15,26 @@ struct ContentView: View {
             RealityView { content in
                 content.add(model.setupContentEntity())
                 let pathToGodotProject = "Godot_Project" // The path to the folder containing the "project.godot" you wish Godot to load.
+                if let scene = try? await Entity(named: "laser_two", in: realityKitContentBundle) {
+                    content.add(scene)
+                    if let capsule = scene.findEntity(named: "shaded_capsule"){
+                        print(capsule)
+                        if let usd = capsule.findEntity(named: "usdPrimitiveAxis") {
+                            print(usd)
+                            if let model = usd.components[ModelComponent.self] {
+                                if let material = model.materials[0] as? ShaderGraphMaterial {
+                                    godotVision.setCustomMaterial(material)
+                                    // Initialize Godot
+                                    let rkEntityGodotRoot = godotVision.setupRealityKitScene(content,
+                                                                                             volumeSize: VOLUME_SIZE,
+                                                                                             projectFileDir: pathToGodotProject)
+                                    print("Godot scene root: \(rkEntityGodotRoot)")
+                                }
+                            }
+                        }
+                    }
+                }
                 
-                // Initialize Godot
-                let rkEntityGodotRoot = godotVision.setupRealityKitScene(content,
-                                                                         volumeSize: VOLUME_SIZE,
-                                                                         projectFileDir: pathToGodotProject)
-                
-                print("Godot scene root: \(rkEntityGodotRoot)")
             } update: { content in
                 // update called when SwiftUI @State in this ContentView changes. See docs for RealityView.
                 // user can change the volume size from the default by selecting a different zoom level.

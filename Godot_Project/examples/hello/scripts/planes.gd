@@ -10,14 +10,6 @@ func add_plane(id: String, vertices: Array, faces: Array, position: Vector3, qua
 	var mesh_instance = MeshInstance3D.new()
 	mesh_instance.mesh = mesh
 	mesh_instance.name = id
-	var body = StaticBody3D.new()
-	body.collision_layer = [4]
-	body.input_ray_pickable = false
-	body.collision_mask = [1,3]
-	var shape = CollisionShape3D.new()
-	shape.shape = mesh.create_convex_shape()
-	body.add_child(shape)
-	mesh_instance.add_child(body)
 	add_child(mesh_instance)
 	mesh_instance.basis = Basis(quat)
 	mesh_instance.global_position = position
