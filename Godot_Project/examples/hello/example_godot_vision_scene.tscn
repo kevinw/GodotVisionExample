@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=23 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
 [ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="8_acynk"]
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
+[ext_resource type="Script" path="res://examples/hello/scripts/magnifiable.gd" id="9_ufgpy"]
+[ext_resource type="Script" path="res://examples/hello/scripts/rotateable.gd" id="10_rs3q4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53i7p"]
 albedo_color = Color(1, 0.603922, 1, 1)
@@ -42,6 +44,14 @@ Sound"
 [sub_resource type="TextMesh" id="TextMesh_yuig5"]
 material = SubResource("StandardMaterial3D_0aq11")
 text = "Drag Me"
+
+[sub_resource type="TextMesh" id="TextMesh_3kclq"]
+material = SubResource("StandardMaterial3D_0aq11")
+text = "Magnify Me"
+
+[sub_resource type="TextMesh" id="TextMesh_vuqu8"]
+material = SubResource("StandardMaterial3D_0aq11")
+text = "Rotate Me"
 
 [node name="Example GodotVision Scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
@@ -102,6 +112,42 @@ mesh = SubResource("BoxMesh_rfpgq")
 [node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
 transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
 mesh = SubResource("TextMesh_yuig5")
+script = ExtResource("9_quqbi")
+
+[node name="Magnify Me Button" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62592, -1.90392, -0.700861)
+collision_mask = 0
+input_capture_on_drag = true
+sync_to_physics = false
+script = ExtResource("9_ufgpy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Magnify Me Button"]
+shape = SubResource("BoxShape3D_5oa15")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Magnify Me Button"]
+mesh = SubResource("BoxMesh_rfpgq")
+
+[node name="Label" type="MeshInstance3D" parent="Magnify Me Button"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_3kclq")
+script = ExtResource("9_quqbi")
+
+[node name="Rotate Me Button" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02265, -3.74206, -0.700861)
+collision_mask = 0
+input_capture_on_drag = true
+sync_to_physics = false
+script = ExtResource("10_rs3q4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rotate Me Button"]
+shape = SubResource("BoxShape3D_5oa15")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rotate Me Button"]
+mesh = SubResource("BoxMesh_rfpgq")
+
+[node name="Label" type="MeshInstance3D" parent="Rotate Me Button"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_vuqu8")
 script = ExtResource("9_quqbi")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
