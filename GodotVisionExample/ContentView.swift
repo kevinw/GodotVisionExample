@@ -5,6 +5,7 @@ import RealityKit
 import GodotVision
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var godotVision = GodotVisionCoordinator()
 
     var body: some View {
@@ -55,6 +56,9 @@ struct ContentView: View {
             }
         }
         .modifier(GodotVisionRealityViewModifier(coordinator: godotVision))
+        .onChange(of: scenePhase) { _, phase in
+            godotVision.scenePhase = phase
+        }
     }
         
     @ViewBuilder

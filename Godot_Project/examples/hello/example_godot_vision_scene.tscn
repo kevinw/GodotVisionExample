@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=32 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/hello/scripts/Rotater.gd" id="2_32yj7"]
@@ -10,6 +10,13 @@
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
 [ext_resource type="Script" path="res://examples/hello/scripts/magnifiable.gd" id="9_ufgpy"]
 [ext_resource type="Script" path="res://examples/hello/scripts/rotateable.gd" id="10_rs3q4"]
+[ext_resource type="Script" path="res://examples/hello/scripts/example_mover.gd" id="11_v8pae"]
+[ext_resource type="Script" path="res://examples/csg/example_rotater.gd" id="12_rdyhc"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://examples/kenney_platformer/objects/player.tscn" id="13_py3sj"]
+[ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://examples/kenney_platformer/objects/platform_grass_large_round.tscn" id="14_g2l2r"]
+[ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://examples/kenney_platformer/objects/platform_falling.tscn" id="15_3bhpv"]
+[ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://examples/kenney_platformer/objects/coin.tscn" id="16_g0bc0"]
+[ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://examples/kenney_platformer/objects/cloud.tscn" id="17_iiyjx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53i7p"]
 albedo_color = Color(1, 0.603922, 1, 1)
@@ -52,6 +59,13 @@ text = "Magnify Me"
 [sub_resource type="TextMesh" id="TextMesh_vuqu8"]
 material = SubResource("StandardMaterial3D_0aq11")
 text = "Rotate Me"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27pdl"]
+albedo_color = Color(1, 0.309804, 1, 1)
+albedo_texture = ExtResource("4_v0jkp")
+
+[sub_resource type="TorusMesh" id="TorusMesh_05ck0"]
+material = SubResource("StandardMaterial3D_27pdl")
 
 [node name="Example GodotVision Scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
@@ -114,6 +128,22 @@ transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603
 mesh = SubResource("TextMesh_yuig5")
 script = ExtResource("9_quqbi")
 
+[node name="Drag Me Button2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75171, -1.90392, -0.700861)
+collision_mask = 0
+script = ExtResource("8_acynk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button2"]
+shape = SubResource("BoxShape3D_5oa15")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button2"]
+mesh = SubResource("BoxMesh_rfpgq")
+
+[node name="Label" type="MeshInstance3D" parent="Drag Me Button2"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_yuig5")
+script = ExtResource("9_quqbi")
+
 [node name="Magnify Me Button" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62592, -1.90392, -0.700861)
 collision_mask = 0
@@ -150,5 +180,42 @@ transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603
 mesh = SubResource("TextMesh_vuqu8")
 script = ExtResource("9_quqbi")
 
+[node name="moving torus" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18934, 0)
+mesh = SubResource("TorusMesh_05ck0")
+
+[node name="ExampleMover" type="Node" parent="moving torus" node_paths=PackedStringArray("target")]
+script = ExtResource("11_v8pae")
+scale = Vector3(5, 2.08165e-12, 2.08165e-12)
+frequency = 1.3
+target = NodePath("..")
+
+[node name="ExampleRotater" type="Node3D" parent="moving torus" node_paths=PackedStringArray("target")]
+script = ExtResource("12_rdyhc")
+target = NodePath("..")
+
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("13_py3sj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36301, 0, 0)
+view = NodePath("../VisionVolumeCamera")
+
+[node name="platform-grass-large-round" parent="." instance=ExtResource("14_g2l2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40172, -3.35376, 0.662678)
+
+[node name="platform-falling" parent="." instance=ExtResource("15_3bhpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34123, -3.42223, -3.65213)
+
+[node name="platform-falling2" parent="." instance=ExtResource("15_3bhpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21409, -3.42223, 4.60199)
+
+[node name="platform-falling3" parent="." instance=ExtResource("15_3bhpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43583, -3.42223, 0.285123)
+
+[node name="coin" parent="." instance=ExtResource("16_g0bc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51046, -2.17635, 0.436899)
+
+[node name="cube" parent="." instance=ExtResource("17_iiyjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48395, 0.00658166, -2.2926)
+
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="spatial_drag" from="Drag Me Button2" to="Drag Me Button2/Label" method="_on_drag_me_button_spatial_drag"]

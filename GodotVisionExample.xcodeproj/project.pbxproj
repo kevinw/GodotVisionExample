@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		DE2E63972B718B10003F7878 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE2E63962B718B10003F7878 /* GodotVision */; };
-		DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */; };
 		DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB52B3C75D500594A05 /* ContentView.swift */; };
 		DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EAB92B3C75D600594A05 /* Assets.xcassets */; };
 		DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */; };
+		DEEA88FC2CB40AF200A8CD7D /* GodotVisionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */; };
 		DEF363ED2B57F443005E175D /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = DEF363EC2B57F443005E175D /* Godot_Project */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodotVisionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExample.swift; sourceTree = "<group>"; };
 		DE54EAB52B3C75D500594A05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE54EAB92B3C75D600594A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE54EABE2B3C75D600594A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExampleApp.swift; sourceTree = "<group>"; };
 		DEF363EC2B57F443005E175D /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +57,7 @@
 		DE54EAAE2B3C75D500594A05 /* GodotVisionExample */ = {
 			isa = PBXGroup;
 			children = (
-				DE54EAB32B3C75D500594A05 /* GodotVisionExample.swift */,
+				DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */,
 				DE54EAB52B3C75D500594A05 /* ContentView.swift */,
 				DE54EAB92B3C75D600594A05 /* Assets.xcassets */,
 				DE54EABE2B3C75D600594A05 /* Info.plist */,
@@ -180,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE54EAB62B3C75D500594A05 /* ContentView.swift in Sources */,
-				DE54EAB42B3C75D500594A05 /* GodotVisionExample.swift in Sources */,
+				DEEA88FC2CB40AF200A8CD7D /* GodotVisionExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,7 @@
 				SDKROOT = xros;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -310,7 +310,7 @@
 				SDKROOT = xros;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -351,7 +351,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 1.1;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -384,7 +384,7 @@
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 1.1;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
