@@ -5,6 +5,7 @@ extends RigidBody3D
 @onready var initial_global_position: Vector3 = self.global_position
 
 func _ready():
+	
 	anim_player.play("walk")
 
 func _process(_delta: float):

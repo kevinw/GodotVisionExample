@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsy1vwxw22fuo"]
+
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_sipvq"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ugvrj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ai6d5"]
+size = Vector3(5, 0.5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uh6x"]
+albedo_color = Color(0.560452, 0, 0.00512891, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ycqr2"]
+material = SubResource("StandardMaterial3D_3uh6x")
+size = Vector3(5, 0.5, 5)
+
+[node name="ExamplePhysicsSoftBody" type="Node3D"]
+
+[node name="VisionVolumeCamera" parent="." instance=ExtResource("1_sipvq")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.760995, 0.293167, -0.57874, 1.86432e-16, 0.892074, 0.45189, 0.648758, -0.343886, 0.678864, 0, 0, 0)
+
+[node name="SoftBody3D" type="SoftBody3D" parent="."]
+transform = Transform3D(0.747218, 0.393794, -0.535342, 0, 0.805535, 0.592548, 0.664578, -0.442762, 0.601911, 0.00134921, 0, 0.00252247)
+mesh = SubResource("TorusMesh_ugvrj")
+simulation_precision = 10
+linear_stiffness = 0.67
+pressure_coefficient = 1500.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(0.999952, 0.0098435, 0, -0.0098435, 0.999952, 0, 0, 0, 1, 0, -1.60509, 0)
+input_ray_pickable = false
+mass = 1000.0
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_ai6d5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_ycqr2")
+skeleton = NodePath("../..")

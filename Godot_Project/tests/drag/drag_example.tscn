@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://nnhkfeyaceaf"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_h4nnu"]
-[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="2_rnoc5"]
+[ext_resource type="Script" path="res://examples/common/scripts/draggable.gd" id="2_rnoc5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5oa15"]
 size = Vector3(1.5, 1, 1)

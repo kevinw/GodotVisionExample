@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/godot_vision/auto_join_shareplay.gd" id="1_4pdjb"]
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="2_xe0xt"]
-[ext_resource type="Script" path="res://examples/hello/scripts/draggable.gd" id="3_1q28r"]
+[ext_resource type="Script" path="res://examples/common/scripts/draggable.gd" id="3_1q28r"]
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="4_knt32"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wwgva"]

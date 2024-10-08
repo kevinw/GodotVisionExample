@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb6s0wxfewce6"]
 
-[ext_resource type="Script" path="res://examples/hello/scripts/tower_enemy.gd" id="1_de4vf"]
+[ext_resource type="Script" path="res://examples/common/scripts/tower_enemy.gd" id="1_de4vf"]
 [ext_resource type="PackedScene" uid="uid://dlposbd8dupye" path="res://examples/hello/prefabs/character_meshes.tscn" id="2_digwm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tglj6"]
