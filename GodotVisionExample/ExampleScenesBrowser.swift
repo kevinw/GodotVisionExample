@@ -11,7 +11,7 @@ fileprivate let exampleScenes: [(label: String, systemImageName: String, resourc
     ("Hello",     "hand.wave",                      "res://examples/hello/example_godot_vision_scene.tscn"),
     ("Physics",   "shippingbox.and.arrow.backward", "res://examples/physics_toy/physics_toy.tscn"),
     ("Skeletons", "figure.cooldown",                "res://examples/rigged_models/example_rigged_models.tscn"),
-    ("Joints",    "lamp.desk.fill",                 "res://scenes/joints/joints.tscn"),
+    ("Joints",    "lamp.desk.fill",                 "res://examples/joints/joints.tscn"),
     //("Soft Bodies", resourcePath: "res://scenes/soft_bodies/soft_bodies.tscn"),
     ("CSG",       "circle.circle",                  "res://examples/csg/csg.tscn"),
 ]
