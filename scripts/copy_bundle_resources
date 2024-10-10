@@ -1,0 +1,40 @@
+#!/bin/bash -e
+
+# TODO: this script could be invoked by an Xcode "Run Script" Build Phase to copy only the imported resources we need in the built product. Currently we just copy over everything.
+
+#
+# use rsync to copy over .godot directory
+#
+
+DEST="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Godot_Project"
+
+mkdir -p "$DEST"
+rsync -avhmW \
+    --exclude=.DS_Store \
+    --exclude=.godot/shader_cache \
+    --exclude=.godot/editor \
+    --exclude=.godot/exported \
+    --delete \
+    --delete-excluded \
+    "${SRCROOT}/Godot_Project/.godot" \
+    "$DEST"
+  
+#
+# use find to find files which don't have a sibling .import file; copy those
+#
+
+# Accumulate files in an array
+files=()
+pushd "$SRCROOT"
+while IFS= read -r -d $'\0' file; do
+  if [[ "${file%.import}" = "$file" && ! -e "${file}.import" ]] || [[ "${file%.import}" != "$file" ]]; then
+    files+=("$file")
+  fi
+done < <(find Godot_Project ! -path '*/.godot/*' ! -path '*/.gitignore' ! -path '*/.DS_Store' -type fl -print0)
+
+# Process each file in the array (e.g., copying them)
+for file in "${files[@]}"; do
+  DESTFILE=$DEST/${file#Godot_Project/}
+  mkdir -p -- $(dirname -- "$DESTFILE")
+  cp -p "$file" "$DESTFILE"
+done
