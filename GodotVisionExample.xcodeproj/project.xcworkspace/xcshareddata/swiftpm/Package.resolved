@@ -1,13 +1,21 @@
 {
-  "originHash" : "fb7a72ac1664fff8cbdb406661f97217a01f64a6ae7341d91ed5b11def041c6c",
   "pins" : [
     {
-      "identity" : "godotvision",
+      "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kevinw/GodotVision.git",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin",
       "state" : {
-        "branch" : "main",
-        "revision" : "c64db9822c318ddc5c0754424fd957e2900fdb25"
+        "revision" : "85e4bb4e1cd62cec64a4b8e769dcefdf0c5b9d64",
+        "version" : "1.4.3"
+      }
+    },
+    {
+      "identity" : "swift-docc-symbolkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
+      "state" : {
+        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
+        "version" : "1.0.0"
       }
     },
     {
@@ -18,23 +26,7 @@
         "revision" : "2bc86522d115234d1f588efe2bcb4ce4be8f8b82",
         "version" : "510.0.3"
       }
-    },
-    {
-      "identity" : "swiftgodot",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/multijam/SwiftGodot",
-      "state" : {
-        "revision" : "a9753686164b63b8228d3b98389d4326d942be80"
-      }
-    },
-    {
-      "identity" : "swiftgodotkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/multijam/SwiftGodotKit",
-      "state" : {
-        "revision" : "526ae902f84c1604d30680d8198c09fdfa566848"
-      }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

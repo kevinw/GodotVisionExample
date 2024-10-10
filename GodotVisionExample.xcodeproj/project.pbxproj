@@ -12,9 +12,22 @@
 		DE54EAB62B3C75D500594A05 /* ExampleScenesBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB52B3C75D500594A05 /* ExampleScenesBrowser.swift */; };
 		DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EAB92B3C75D600594A05 /* Assets.xcassets */; };
 		DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */; };
+		DE89B3362CB80578003265C7 /* Godot_Project in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE89B3352CB80578003265C7 /* Godot_Project */; };
 		DEEA88FC2CB40AF200A8CD7D /* GodotVisionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */; };
-		DEF363ED2B57F443005E175D /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = DEF363EC2B57F443005E175D /* Godot_Project */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE89B3342CB80548003265C7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				DE89B3362CB80578003265C7 /* Godot_Project in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE2A91D22CB55A7900F3548C /* GodotVisionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionSettingsView.swift; sourceTree = "<group>"; };
@@ -23,8 +36,8 @@
 		DE54EAB92B3C75D600594A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE54EABE2B3C75D600594A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE89B3352CB80578003265C7 /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
 		DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExampleApp.swift; sourceTree = "<group>"; };
-		DEF363EC2B57F443005E175D /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +55,7 @@
 		DE54EAA32B3C75D500594A05 = {
 			isa = PBXGroup;
 			children = (
-				DEF363EC2B57F443005E175D /* Godot_Project */,
+				DE89B3352CB80578003265C7 /* Godot_Project */,
 				DE54EAAE2B3C75D500594A05 /* GodotVisionExample */,
 				DE54EAAD2B3C75D500594A05 /* Products */,
 			);
@@ -88,6 +101,7 @@
 				DE54EAA92B3C75D500594A05 /* Frameworks */,
 				DE54EAAA2B3C75D500594A05 /* Resources */,
 				DE0F24412BC86C0600C09903 /* Run Script */,
+				DE89B3342CB80548003265C7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -173,7 +187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# Sign dynamically loaded Godot gdextension .frameworks\n#\nfor i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do\n    inputFileVar=\"SCRIPT_INPUT_FILE_${i}\"\n    inputFile=\"${!inputFileVar}\"\n    codesign --verbose --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \"$inputFile\"\ndone\n";
+			shellScript = "#\n# Sign dynamically loaded Godot gdextension .frameworks\n#\nfor i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do\n    inputFileVar=\"SCRIPT_INPUT_FILE_${i}\"\n    inputFile=\"${!inputFileVar}\"\n    echo \"SIGNING.\"\n    echo \"  EXPANDED_CODE_SIGN_IDENTITY_NAME: '${EXPANDED_CODE_SIGN_IDENTITY_NAME}'\"\n    echo \"  EXPANDED_CODE_SIGN_IDENTITY:      '${EXPANDED_CODE_SIGN_IDENTITY}'\"\n    echo \"Signing file '$inputFile'\"\n    codesign --verbose --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$inputFile\"\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -347,7 +361,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -381,7 +395,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = vision.godot.examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;

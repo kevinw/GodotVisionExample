@@ -53,10 +53,12 @@ struct ExampleScenesBrowser: View {
                             Label("Reload", systemImage: "arrow.clockwise.circle")
                         }
                         Button { withAnimation { showSettings.toggle() } } label: {
-                            Label("Settings", systemImage: "gear")
-                        }
+                            Label(showSettings ? "Settings" : "", systemImage: "gear")
+                        }.transition(.scale)
+                        
                         if showSettings {
                             GodotVisionSettingsView(godotVision: godotVision)
+                                .transition(.slide)
                         }
                     }.padding().glassBackgroundEffect()
                 }
@@ -66,7 +68,8 @@ struct ExampleScenesBrowser: View {
         .onChange(of: selectedScene) { _, sceneResourcePath in
             godotVision.changeSceneToFile(atResourcePath: sceneResourcePath)
         }
-        .ornament(visibility: .automatic, attachmentAnchor: .scene(.leading), contentAlignment: .center) {
+        .background {
+        //.ornament(visibility: .automatic, attachmentAnchor: .scene(.leading), contentAlignment: .center) {
             // Show a tab bar on the left allowing the user to select example scenes.
             TabView(selection: $selectedScene) {
                 ForEach(exampleScenes, id: \.resourcePath) { (label, systemImage, resourcePath) in

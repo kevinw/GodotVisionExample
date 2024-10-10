@@ -5,7 +5,6 @@
 [sub_resource type="GDScript" id="GDScript_6e1ac"]
 script/source = "extends Node3D
 @onready var animation_player = $AnimationPlayer
-
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw7sq"]

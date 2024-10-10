@@ -1,8 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=31 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
+[ext_resource type="Script" path="res://test_delete_me.gd" id="1_whf6r"]
 [ext_resource type="Script" path="res://examples/common/scripts/Rotater.gd" id="2_32yj7"]
-[ext_resource type="PackedScene" uid="uid://bb6s0wxfewce6" path="res://examples/hello/prefabs/tower_enemy.tscn" id="3_ywgnt"]
 [ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
 [ext_resource type="Script" path="res://examples/common/scripts/play_sound_button.gd" id="5_lq6td"]
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
@@ -16,7 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://examples/kenney_platformer/objects/platform_grass_large_round.tscn" id="14_g2l2r"]
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://examples/kenney_platformer/objects/platform_falling.tscn" id="15_3bhpv"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://examples/kenney_platformer/objects/coin.tscn" id="16_g0bc0"]
+[ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://examples/kenney_platformer/objects/platform.tscn" id="17_5m72r"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://examples/kenney_platformer/objects/cloud.tscn" id="17_iiyjx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_exuxr"]
+size = Vector3(15.84, 8.8, 13.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53i7p"]
 albedo_color = Color(1, 0.603922, 1, 1)
@@ -24,15 +28,6 @@ albedo_color = Color(1, 0.603922, 1, 1)
 [sub_resource type="TextMesh" id="TextMesh_14eta"]
 material = SubResource("StandardMaterial3D_53i7p")
 text = "Hello from Godot"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbryu"]
-albedo_texture = ExtResource("4_v0jkp")
-uv1_scale = Vector3(3, 3, 3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_u4h1h"]
-material = SubResource("StandardMaterial3D_dbryu")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ttl84"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5oa15"]
 size = Vector3(1.5, 1, 1)
@@ -69,8 +64,13 @@ material = SubResource("StandardMaterial3D_27pdl")
 
 [node name="Example GodotVision Scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
+script = ExtResource("1_whf6r")
 
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("1_3lu4e")]
+
+[node name="CollisionShape3D" parent="VisionVolumeCamera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.05989)
+shape = SubResource("BoxShape3D_exuxr")
 
 [node name="Text Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(10.009, 0, 0, 0, 10.009, 0, 0, 0, 10.009, 0, 0.539946, -0.496924)
@@ -80,20 +80,8 @@ script = ExtResource("2_32yj7")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.688506, 0.382906, -0.615907, -4.30062e-16, 0.849257, 0.527979, 0.72523, -0.363517, 0.584719, 0, 0, 0)
 
-[node name="character" parent="." instance=ExtResource("3_ywgnt")]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 1.30854, 2.08165e-12)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00369835, -3.60079, 0.00676847)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_u4h1h")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_ttl84")
-
 [node name="Play Sound Button" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20155, -1.90392, -0.700861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6105, -3.76052, -0.694833)
 collision_mask = 0
 input_capture_on_drag = true
 script = ExtResource("5_lq6td")
@@ -124,22 +112,6 @@ shape = SubResource("BoxShape3D_5oa15")
 mesh = SubResource("BoxMesh_rfpgq")
 
 [node name="Label" type="MeshInstance3D" parent="Drag Me Button"]
-transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
-mesh = SubResource("TextMesh_yuig5")
-script = ExtResource("9_quqbi")
-
-[node name="Drag Me Button2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75171, -1.90392, -0.700861)
-collision_mask = 0
-script = ExtResource("8_acynk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Drag Me Button2"]
-shape = SubResource("BoxShape3D_5oa15")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Drag Me Button2"]
-mesh = SubResource("BoxMesh_rfpgq")
-
-[node name="Label" type="MeshInstance3D" parent="Drag Me Button2"]
 transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
 mesh = SubResource("TextMesh_yuig5")
 script = ExtResource("9_quqbi")
@@ -195,11 +167,11 @@ script = ExtResource("12_rdyhc")
 target = NodePath("..")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("13_py3sj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36301, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 view = NodePath("../VisionVolumeCamera")
 
 [node name="platform-grass-large-round" parent="." instance=ExtResource("14_g2l2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40172, -3.35376, 0.662678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87243, -3.35376, 0.66343)
 
 [node name="platform-falling" parent="." instance=ExtResource("15_3bhpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34123, -3.42223, -3.65213)
@@ -207,15 +179,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34123, -3.42223, -3.65213)
 [node name="platform-falling2" parent="." instance=ExtResource("15_3bhpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21409, -3.42223, 4.60199)
 
-[node name="platform-falling3" parent="." instance=ExtResource("15_3bhpv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43583, -3.42223, 0.285123)
-
 [node name="coin" parent="." instance=ExtResource("16_g0bc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51046, -2.17635, 0.436899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35514, -2.0356, -3.60906)
 
 [node name="cube" parent="." instance=ExtResource("17_iiyjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48395, 0.00658166, -2.2926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51429, 0.00658166, -2.2926)
+
+[node name="platform" parent="." instance=ExtResource("17_5m72r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+script = null
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
-[connection signal="spatial_drag" from="Drag Me Button2" to="Drag Me Button2/Label" method="_on_drag_me_button_spatial_drag"]
+
+[editable path="VisionVolumeCamera"]

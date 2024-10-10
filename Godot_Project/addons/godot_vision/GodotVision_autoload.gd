@@ -4,8 +4,9 @@ class_name GodotVision_autoload
 @onready var share_play: SharePlay = $SharePlay
 var scene_tree: SceneTree
 
+	
 func running_on_vision():
-	return OS.get_name() == "iOS"
+	return OS.get_name() == "iOS" # TODO: godot will eventually report the correct OS here :)
 
 func _enter_tree():
 	if !running_on_vision():
@@ -18,7 +19,7 @@ func _exit_tree():
 		scene_tree = null
 	
 func _on_node_added(node: Node):
-	if node.has_signal("spatial_drag"):		
+	if node.has_signal("spatial_drag"):
 		var col := node as CollisionObject3D
 		if col:
 			_simulate_godot_vision_drag_signal(node)
