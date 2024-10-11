@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=30 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
-[ext_resource type="Script" path="res://test_delete_me.gd" id="1_whf6r"]
 [ext_resource type="Script" path="res://examples/common/scripts/Rotater.gd" id="2_32yj7"]
 [ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
 [ext_resource type="Script" path="res://examples/common/scripts/play_sound_button.gd" id="5_lq6td"]
@@ -64,7 +63,6 @@ material = SubResource("StandardMaterial3D_27pdl")
 
 [node name="Example GodotVision Scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
-script = ExtResource("1_whf6r")
 
 [node name="VisionVolumeCamera" parent="." instance=ExtResource("1_3lu4e")]
 
