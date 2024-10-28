@@ -3,17 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE2A91D32CB55A7D00F3548C /* GodotVisionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A91D22CB55A7900F3548C /* GodotVisionSettingsView.swift */; };
+		DE054E0F2CB954A500D7F4C8 /* GodotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE054E0E2CB954A200D7F4C8 /* GodotInput.swift */; };
+		DE054E132CB956F500D7F4C8 /* ScenePhaseWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE054E122CB956F200D7F4C8 /* ScenePhaseWatcher.swift */; };
 		DE2E63972B718B10003F7878 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = DE2E63962B718B10003F7878 /* GodotVision */; };
-		DE54EAB62B3C75D500594A05 /* ExampleScenesBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54EAB52B3C75D500594A05 /* ExampleScenesBrowser.swift */; };
 		DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EAB92B3C75D600594A05 /* Assets.xcassets */; };
 		DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */; };
-		DE89B3362CB80578003265C7 /* Godot_Project in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE89B3352CB80578003265C7 /* Godot_Project */; };
+		DE897A0F2CB93B31003265C7 /* RealityKitToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE897A0E2CB93B2F003265C7 /* RealityKitToolbox.swift */; };
+		DE897A112CB93C54003265C7 /* HandTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE897A102CB93C52003265C7 /* HandTracking.swift */; };
 		DEEA88FC2CB40AF200A8CD7D /* GodotVisionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */; };
+		DEF34D782CCF886F009B8A49 /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = DEF34D772CCF886B009B8A49 /* Godot_Project */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,22 +25,31 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				DE89B3362CB80578003265C7 /* Godot_Project in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE2A91D22CB55A7900F3548C /* GodotVisionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionSettingsView.swift; sourceTree = "<group>"; };
+		DE054E0E2CB954A200D7F4C8 /* GodotInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotInput.swift; sourceTree = "<group>"; };
+		DE054E122CB956F200D7F4C8 /* ScenePhaseWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePhaseWatcher.swift; sourceTree = "<group>"; };
+		DE2A921A2CB5E0E400F3548C /* GodotVision */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GodotVision; path = ../GodotVision; sourceTree = SOURCE_ROOT; };
+		DE2A921B2CB5E0E400F3548C /* SwiftGodot */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftGodot; path = ../SwiftGodot; sourceTree = SOURCE_ROOT; };
+		DE2A921C2CB5E0E400F3548C /* SwiftGodotKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftGodotKit; path = ../SwiftGodotKit; sourceTree = SOURCE_ROOT; };
 		DE54EAAC2B3C75D500594A05 /* GodotVisionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodotVisionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE54EAB52B3C75D500594A05 /* ExampleScenesBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScenesBrowser.swift; sourceTree = "<group>"; };
 		DE54EAB92B3C75D600594A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE54EABE2B3C75D600594A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE89B3352CB80578003265C7 /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
+		DE897A0E2CB93B2F003265C7 /* RealityKitToolbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitToolbox.swift; sourceTree = "<group>"; };
+		DE897A102CB93C52003265C7 /* HandTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTracking.swift; sourceTree = "<group>"; };
 		DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodotVisionExampleApp.swift; sourceTree = "<group>"; };
+		DEF34D772CCF886B009B8A49 /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DE897A082CB93AAE003265C7 /* Controls */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controls; sourceTree = "<group>"; };
+		DE897A0C2CB93B1B003265C7 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DE54EAA92B3C75D500594A05 /* Frameworks */ = {
@@ -55,7 +66,10 @@
 		DE54EAA32B3C75D500594A05 = {
 			isa = PBXGroup;
 			children = (
-				DE89B3352CB80578003265C7 /* Godot_Project */,
+				DEF34D772CCF886B009B8A49 /* Godot_Project */,
+				DE2A921A2CB5E0E400F3548C /* GodotVision */,
+				DE2A921B2CB5E0E400F3548C /* SwiftGodot */,
+				DE2A921C2CB5E0E400F3548C /* SwiftGodotKit */,
 				DE54EAAE2B3C75D500594A05 /* GodotVisionExample */,
 				DE54EAAD2B3C75D500594A05 /* Products */,
 			);
@@ -72,9 +86,10 @@
 		DE54EAAE2B3C75D500594A05 /* GodotVisionExample */ = {
 			isa = PBXGroup;
 			children = (
-				DE2A91D22CB55A7900F3548C /* GodotVisionSettingsView.swift */,
+				DE897A0D2CB93B29003265C7 /* Utilities */,
+				DE897A0C2CB93B1B003265C7 /* Views */,
+				DE897A082CB93AAE003265C7 /* Controls */,
 				DEEA88FB2CB40AF200A8CD7D /* GodotVisionExampleApp.swift */,
-				DE54EAB52B3C75D500594A05 /* ExampleScenesBrowser.swift */,
 				DE54EAB92B3C75D600594A05 /* Assets.xcassets */,
 				DE54EABE2B3C75D600594A05 /* Info.plist */,
 				DE54EABB2B3C75D600594A05 /* Preview Content */,
@@ -88,6 +103,17 @@
 				DE54EABC2B3C75D600594A05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE897A0D2CB93B29003265C7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE054E122CB956F200D7F4C8 /* ScenePhaseWatcher.swift */,
+				DE054E0E2CB954A200D7F4C8 /* GodotInput.swift */,
+				DE897A102CB93C52003265C7 /* HandTracking.swift */,
+				DE897A0E2CB93B2F003265C7 /* RealityKitToolbox.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +133,10 @@
 			);
 			dependencies = (
 				DE5677492B702579002BABB4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE897A082CB93AAE003265C7 /* Controls */,
+				DE897A0C2CB93B1B003265C7 /* Views */,
 			);
 			name = GodotVisionExample;
 			packageProductDependencies = (
@@ -158,7 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEF363ED2B57F443005E175D /* Godot_Project in Resources */,
+				DEF34D782CCF886F009B8A49 /* Godot_Project in Resources */,
 				DE54EABD2B3C75D600594A05 /* Preview Assets.xcassets in Resources */,
 				DE54EABA2B3C75D600594A05 /* Assets.xcassets in Resources */,
 			);
@@ -196,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE54EAB62B3C75D500594A05 /* ExampleScenesBrowser.swift in Sources */,
-				DE2A91D32CB55A7D00F3548C /* GodotVisionSettingsView.swift in Sources */,
+				DE897A0F2CB93B31003265C7 /* RealityKitToolbox.swift in Sources */,
 				DEEA88FC2CB40AF200A8CD7D /* GodotVisionExampleApp.swift in Sources */,
+				DE897A112CB93C54003265C7 /* HandTracking.swift in Sources */,
+				DE054E0F2CB954A500D7F4C8 /* GodotInput.swift in Sources */,
+				DE054E132CB956F500D7F4C8 /* ScenePhaseWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +375,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GodotVisionExample/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Godot_Project/addons/godot-jolt/visionos",
+					"$(PROJECT_DIR)/Godot_Project/addons/godot-jolt/macos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -384,6 +421,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GodotVisionExample/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Godot_Project/addons/godot-jolt/visionos",
+					"$(PROJECT_DIR)/Godot_Project/addons/godot-jolt/macos",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";

@@ -25,4 +25,3 @@ func _on_rigid_body_3d_input_event(camera, event, position, normal, shape_idx):
 			target_damp = Vector2(40.0, 0)
 		else:
 			target_damp = orig_angular_damp
-

@@ -21,6 +21,6 @@ func _enter_tree():
 		orig_pos = target.position
 
 func _process(delta):
-	var prevTime := time
+	# var prevTime := time
 	time += delta
 	target.position = orig_pos + sin(time * frequency) * scale

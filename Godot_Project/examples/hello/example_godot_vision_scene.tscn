@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=32 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/common/scripts/Rotater.gd" id="2_32yj7"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://examples/kenney_platformer/objects/coin.tscn" id="16_g0bc0"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://examples/kenney_platformer/objects/platform.tscn" id="17_5m72r"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://examples/kenney_platformer/objects/cloud.tscn" id="17_iiyjx"]
+[ext_resource type="PackedScene" uid="uid://cqvqorckixfi7" path="res://examples/hello/Mage.glb" id="18_gfffs"]
+[ext_resource type="Script" path="res://examples/common/scripts/auto_play_anim.gd" id="19_88jp0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_exuxr"]
 size = Vector3(15.84, 8.8, 13.2)
@@ -185,7 +187,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51429, 0.00658166, -2.2926)
 
 [node name="platform" parent="." instance=ExtResource("17_5m72r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
-script = null
+
+[node name="Mage" parent="." instance=ExtResource("18_gfffs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23332, -2.85376, 0.882599)
+script = ExtResource("19_88jp0")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
