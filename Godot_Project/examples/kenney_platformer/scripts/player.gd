@@ -27,6 +27,9 @@ var coins = 0
 
 # Functions
 
+func respawn():
+	get_tree().reload_current_scene()
+
 func _physics_process(delta):
 
 	# Handle functions
@@ -56,7 +59,7 @@ func _physics_process(delta):
 	# Falling/respawning
 
 	if position.y < -10:
-		get_tree().reload_current_scene()
+		respawn()
 
 	# Animation for scale (jumping and landing)
 

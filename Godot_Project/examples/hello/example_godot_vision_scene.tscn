@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://vts2xl0t0xub"]
+[gd_scene load_steps=37 format=3 uid="uid://vts2xl0t0xub"]
 
 [ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="1_3lu4e"]
 [ext_resource type="Script" path="res://examples/common/scripts/Rotater.gd" id="2_32yj7"]
 [ext_resource type="Texture2D" uid="uid://bmd0x5t1c2b3i" path="res://examples/hello/textures/checker.jpg" id="4_v0jkp"]
 [ext_resource type="Script" path="res://examples/common/scripts/play_sound_button.gd" id="5_lq6td"]
 [ext_resource type="AudioStream" uid="uid://xrv22x52g14l" path="res://examples/hello/sound/moo.mp3" id="6_3x8lp"]
+[ext_resource type="Script" path="res://examples/hello/respawn_button.gd" id="7_4bxrb"]
+[ext_resource type="Script" path="res://examples/hello/respawn_callback.gd" id="8_6skqf"]
 [ext_resource type="Script" path="res://examples/common/scripts/draggable.gd" id="8_acynk"]
 [ext_resource type="Script" path="res://examples/hello/change_text_on_drag.gd" id="9_quqbi"]
 [ext_resource type="Script" path="res://examples/common/scripts/magnifiable.gd" id="9_ufgpy"]
@@ -47,6 +49,16 @@ Sound"
 [sub_resource type="TextMesh" id="TextMesh_yuig5"]
 material = SubResource("StandardMaterial3D_0aq11")
 text = "Drag Me"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a12e4"]
+size = Vector3(1.5, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_rc4xf"]
+material = SubResource("StandardMaterial3D_0aq11")
+text = "Respawn"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_df0s6"]
+size = Vector3(1.5, 1, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_3kclq"]
 material = SubResource("StandardMaterial3D_0aq11")
@@ -116,6 +128,27 @@ transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603
 mesh = SubResource("TextMesh_yuig5")
 script = ExtResource("9_quqbi")
 
+[node name="Respawn Button" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.918293, -3.80784, -0.867469)
+collision_mask = 0
+input_capture_on_drag = true
+sync_to_physics = false
+script = ExtResource("7_4bxrb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Respawn Button"]
+shape = SubResource("BoxShape3D_a12e4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Respawn Button"]
+mesh = SubResource("BoxMesh_rfpgq")
+
+[node name="Label" type="MeshInstance3D" parent="Respawn Button"]
+transform = Transform3D(1.97583, 0, 0, 0, 1.97583, 0, 0, 0, 1.97583, 0, 0, 0.603814)
+mesh = SubResource("TextMesh_rc4xf")
+script = ExtResource("9_quqbi")
+
+[node name="RespawnCallback" type="Node3D" parent="Respawn Button"]
+script = ExtResource("8_6skqf")
+
 [node name="Magnify Me Button" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62592, -1.90392, -0.700861)
 collision_mask = 0
@@ -124,7 +157,7 @@ sync_to_physics = false
 script = ExtResource("9_ufgpy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Magnify Me Button"]
-shape = SubResource("BoxShape3D_5oa15")
+shape = SubResource("BoxShape3D_df0s6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Magnify Me Button"]
 mesh = SubResource("BoxMesh_rfpgq")
@@ -194,5 +227,7 @@ script = ExtResource("19_88jp0")
 
 [connection signal="input_event" from="Play Sound Button" to="Play Sound Button" method="_on_input_event"]
 [connection signal="spatial_drag" from="Drag Me Button" to="Drag Me Button/Label" method="_on_drag_me_button_spatial_drag"]
+[connection signal="input_event" from="Respawn Button" to="Respawn Button" method="_on_input_event"]
+[connection signal="on_clicked" from="Respawn Button" to="Respawn Button/RespawnCallback" method="_on_respawn_button_on_clicked"]
 
 [editable path="VisionVolumeCamera"]
